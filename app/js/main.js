@@ -7,6 +7,10 @@ var recognition = new webkitSpeechRecognition();
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.onresult = function(event) {
-  socket.emit('speech in', { paylouad: event });
+  console.log(event);
+  if(event.results[0].isFinal){
+    console.log('SOCKETING:', event.results[0][0].transcript);
+    socket.emit('speech in', { payload: event.results[0][0].transcript });
+  }
 }
 recognition.start();
