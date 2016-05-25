@@ -11,6 +11,7 @@ socket.on('speech out', (data) => {
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.onresult = function(event) {
+  face.makeHappy();
   console.log(event);
   if(event.results[0].isFinal) {
     console.log('speech in', event.results[0][0].transcript);
@@ -25,19 +26,19 @@ socket.on('speech out', (message) =>{
 
 recognition.start();
 
-face.makeAngry();
-face.makeSad();
-face.makeHappy();
+// face.makeAngry();
+// face.makeSad();
+// face.makeHappy();
 face.makeNeutral();
 
-face.setVocalExpression('a');
-face.setVocalExpression('b');
-face.setVocalExpression('o');
-face.setVocalExpression('i');
-face.setVocalExpression('');
+// face.setVocalExpression('a');
+// face.setVocalExpression('b');
+// face.setVocalExpression('o');
+// face.setVocalExpression('i');
+// face.setVocalExpression('');
 
 // such a nice async solution!
-setTimeout(function() {
-  mouth.create('.face-oscilloscope');
-  mouth.start();
-}, 500)
+// setTimeout(function() {
+//   mouth.create('.face-oscilloscope');
+//   mouth.start();
+// }, 500)
