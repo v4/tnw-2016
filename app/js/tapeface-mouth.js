@@ -35,7 +35,10 @@ var mouth = (function () {
 
     module.svg = createSvg(target, svgHeight, svgWidth)
       // svg.attr('transform', 'translate(200,20)');
-
+    
+    module.scale = d3.scale.linear()
+    .range([svgHeight, 0]);
+    module.scale.domain([255,0]);
     // Create our initial D3 chart.
     module.svg.selectAll('rect')
        .data(frequencyData)
@@ -58,15 +61,16 @@ var mouth = (function () {
 
        // Copy frequency data to frequencyData array.
        analyser.getByteFrequencyData(frequencyData);
-       
+
        // Update d3 chart with new data.
        module.svg.selectAll('rect')
           .data(frequencyData)
           .attr('y', function(d) {
-             return d / 10
+            let y = ((svgHeight / 2) - module.scale(d)) + (module.scale(d) / 2);
+            return y;
           })
           .attr('height', function(d) {
-             return (d / 10) ;
+             return module.scale(d);
           })
           .attr('fill', function(d) {
              // return 'rgb(0, 0, ' + d + ')';
