@@ -1,0 +1,14 @@
+
+
+.angry, .sad { 
+  background: #ffc9b9ff; 
+}
+
+.happy, .amazed { 
+  background: #d9ffd2ff;
+}
+
+.indifferent, .static, .unknown {
+  background: #b8daffff;
+}
+
