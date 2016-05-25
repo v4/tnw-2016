@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Chango);
 
 html, body {
   background: #7ddfcc;
@@ -17,6 +17,7 @@ html, body {
 }
 
 .face-item {
+  margin: 0 auto;
   background: #000;
   width: 5px;
   height: 5px;
@@ -26,6 +27,7 @@ html, body {
   width: 75px;
   height: 20px;
   position: relative;
+  background: blue;
 }
 
 .brow-right {
@@ -43,6 +45,7 @@ html, body {
 }
 
 .eye { 
+  margin: 0 auto;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -53,7 +56,8 @@ html, body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  color: #FFF;
+  background: #FFF;
+  margin: 0 auto;
 }
 
 .eye-left {
@@ -65,17 +69,43 @@ html, body {
 }
 
 .nose {
-  width: 0;
-  height: 0;
+  width: 0 !important;
+  height: 0 !important;
   border-style: solid;
+  background: none;
   border-width: 20px 20px 0 20px;
-  border-color: #000000 transparent transparent transparent;
+  border-color: green transparent transparent transparent;
+}
+
+.mouth-piece {
+  text-align: center;
+  font-size: 100px;
+  font-family: Chango, sans-serif;
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); 
+  color: black;
+  background: transparent;
 }
 
 .moustache {
-
+  width: 50px;
+  heigt: 50px;
+  color: black;
+  background: transparent;
+  text-align: center;
 }
 
 .mouth {
+  width: 50px;
+  heigt: 50px;
+  color: black;
+  background: transparent;
+  text-align: center;
+}
 
+.mouth .mouth-piece {
+  font-size: 120px;
+  font-weight: normal;
+  font-family: sans-serif;
 }
