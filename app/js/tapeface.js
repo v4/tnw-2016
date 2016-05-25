@@ -14,6 +14,7 @@ var face = (function () { // eslint-disable-line
     moods.forEach(function(mood) {
       $('.face-brows').removeClass('face-' + mood);
       $('.face-eyes').removeClass('face-' + mood);
+      $('.bg-color').removeClass('face-' + mood);
       // TODO:$('.face-mouth').removeClass('face-mouth-' + mood);
     });
     return true;
@@ -23,6 +24,7 @@ var face = (function () { // eslint-disable-line
     this.removeAllMoodClasses();
     $('.face-eyes').addClass('face-' + mood);
     $('.face-brows').addClass('face-' + mood);
+    $('.bg-color').addClass('face-' + mood);
     // TODO: $('.face-mouth').addClass('.face-' . mood);
     return true;
   };

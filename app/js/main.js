@@ -35,3 +35,9 @@ face.setVocalExpression('b');
 face.setVocalExpression('o');
 face.setVocalExpression('i');
 face.setVocalExpression('');
+
+// such a nice async solution!
+setTimeout(function() {
+  oscilloscope.create('.face-oscilloscope');
+  oscilloscope.start();
+}, 500)
