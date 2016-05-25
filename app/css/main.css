@@ -5,7 +5,9 @@ html, body {
 }
 
 .face-holder {
+  position: relative;
   margin: 0 auto;
+  margin-top: 10%;
 }
 
 .face {
@@ -14,8 +16,13 @@ html, body {
   margin: 0 auto;
 }
 
-.brow {
+.face-item {
   background: #000;
+  width: 5px;
+  height: 5px;
+}
+
+.brow {
   width: 75px;
   height: 20px;
   position: relative;
@@ -36,19 +43,33 @@ html, body {
 }
 
 .eye { 
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /* width and height can be anything, as long as they're equal */
+}
 
+.eye-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: #FFF;
 }
 
 .eye-left {
-
+  left: 100px;
 }
 
 .eye-right {
-
+  right: -100px;
 }
 
 .nose {
-
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #000000 transparent transparent transparent;
 }
 
 .moustache {
