@@ -1,0 +1,169 @@
+
+
+// LEFT - RIGHT
+
+@-webkit-keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
+  0%   { left: 0; }
+  50%  { left: 50px; }
+  100% { left: 0; }
+}
+
+@-moz-keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
+  0%   { left: 0; }
+  50%  { left: 50px; }
+  100% { left: 0; }
+}
+
+@keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
+  0%   { left: 0; }
+  50%  { left: 50px; }
+  100% { left: 0; }
+}
+
+// UP AND DOWN
+
+@-webkit-keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
+  0%   { top: 0; }
+  50%  { top: 50px; }
+  100% { top: 0; }
+}
+
+@-moz-keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
+  0%   { top: 0; }
+  50%  { top: 50px; }
+  100% { top: 0; }
+}
+
+@keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
+  0%   { top: 0; }
+  50%  { top: 50px; }
+  100% { top: 0; }
+}
+
+// FACE STYLES AND ANIMATIONS
+
+.face-holder {
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10%;
+  -webkit-animation: FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* IE 10+, Fx 29+ */
+}
+
+.face {
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  position: relative;
+  margin: 0 auto;
+  -webkit-animation: FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* IE 10+, Fx 29+ */
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.face-item {
+  margin: 0 auto;
+  background: #000;
+  width: 5px;
+  height: 5px;
+}
+
+.brow {
+  width: 75px;
+  height: 20px;
+  position: absolute;
+  // background: #000;
+}
+
+.brow-right {
+  right: 30px;
+  -ms-transform: rotate(7deg);
+  -webkit-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
+
+.brow-left {
+  left: -75px - 30px;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg); 
+}
+
+.eye { 
+  position: absolute;
+  top: 30px;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.eye-inner {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FFF;
+  margin: 0 auto;
+}
+
+.eye-left {
+  left: -40px;
+}
+
+.eye-right {
+  right: 10px;
+}
+
+.nose {
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid;
+  background: none;
+  border-width: 20px 20px 0 20px;
+  border-color: #000000 transparent transparent transparent;
+}
+
+.mouth-piece {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 100px;
+  font-family: Chango, sans-serif;
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); 
+  color: black;
+  background: transparent;
+}
+
+.moustache {
+  width: 50px;
+  height: 30px;
+  color: black;
+  background: transparent;
+  text-align: center;
+}
+
+.mouth {
+  width: 50px;
+  heigt: 50px;
+  color: black;
+  background: transparent;
+  text-align: center;
+}
+
+.mouth .mouth-piece {
+  font-size: 120px;
+  font-weight: normal;
+  font-family: sans-serif;
+}
