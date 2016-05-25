@@ -39,13 +39,16 @@ $(document).ready(function () {
   // face.setVocalExpression('i');
   // face.setVocalExpression('');
   
-  mouth.create('audioElement', '.face-oscilloscope', {
+  var mouthOptions = {
     frequencyBins : 20,
     barPadding: 2,
     height: '50',
     width: '75',
     fillColor: '#3541db'
-  });
+  };
+  
+  // params: audio object ID, HTML element target, options.
+  mouth.create('audioElement', '.face-oscilloscope', mouthOptions);
 
   mouth.start();
 
