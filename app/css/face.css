@@ -54,7 +54,7 @@
   -moz-animation:    FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Fx 5+ */
   -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Opera 12+ */
   animation:         FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* IE 10+, Fx 29+ */
-  // background: rgba(255, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .face {
@@ -68,17 +68,19 @@
   -moz-animation:    FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Fx 5+ */
   -o-animation:      FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Opera 12+ */
   animation:         FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* IE 10+, Fx 29+ */
-  // background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .face-shadow {
-  width: 50px;
-  height: 50px;
-  margin-left: 175px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
+  margin-left: 125px;
+  background: rgba(0, 0, 0, 0.25);
   position: fixed;
   bottom: 5%;
+  width: 200px;
+  height: 25px;
+  -moz-border-radius: 100px / 30px;
+  -webkit-border-radius: 100px / 30px;
+  border-radius: 100px / 30px;
 }
 
 .face-item {
@@ -118,7 +120,6 @@
   height: 50px;
   border-radius: 50%;
   /* width and height can be anything, as long as they're equal */
-  // transition: all 0.5s;
 }
 
 .eye-left {

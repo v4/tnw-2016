@@ -20,3 +20,12 @@
    border-right: 26px solid red;
    border-bottom: 13px solid transparent;
 }
+
+// .face-shadow {
+//    width: 200px;
+//    height: 100px;
+//    background: red;
+//    -moz-border-radius: 100px / 50px;
+//    -webkit-border-radius: 100px / 50px;
+//    border-radius: 100px / 50px;
+// }
