@@ -1,0 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Chango);
+
+html, body {
+  background: #7ddfcc;
+}
+
+.face-holder {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+.face {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.face-item {
+  margin: 0 auto;
+  background: #000;
+  width: 5px;
+  height: 5px;
+}
+
+.brow {
+  width: 75px;
+  height: 20px;
+  position: relative;
+  background: blue;
+}
+
+.brow-right {
+  -ms-transform: rotate(7deg);
+  -webkit-transform: rotate(7deg);
+  transform: rotate(7deg);
+  right: -100px;
+}
+
+.brow-left {
+  left: 100px;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg); 
+}
+
+.eye { 
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /* width and height can be anything, as long as they're equal */
+}
+
+.eye-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FFF;
+  margin: 0 auto;
+}
+
+.eye-left {
+  left: 100px;
+}
+
+.eye-right {
+  right: -100px;
+}
+
+.nose {
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid;
+  background: none;
+  border-width: 20px 20px 0 20px;
+  border-color: green transparent transparent transparent;
+}
+
+.mouth-piece {
+  text-align: center;
+  font-size: 100px;
+  font-family: Chango, sans-serif;
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); 
+  color: black;
+  background: transparent;
+}
+
+.moustache {
+  width: 50px;
+  heigt: 50px;
+  color: black;
+  background: transparent;
+  text-align: center;
+}
+
+.mouth {
+  width: 50px;
+  heigt: 50px;
+  color: black;
+  background: transparent;
+  text-align: center;
+}
+
+.mouth .mouth-piece {
+  font-size: 120px;
+  font-weight: normal;
+  font-family: sans-serif;
+}
