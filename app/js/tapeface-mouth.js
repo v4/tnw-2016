@@ -66,7 +66,7 @@ var mouth = (function () {
           })
           .attr('fill', function(d) {
              // return 'rgb(0, 0, ' + d + ')';
-             return '#3541db';
+             return options.fillColor;
           });
     }
 
