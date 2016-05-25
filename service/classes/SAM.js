@@ -9,7 +9,7 @@ class SAM extends EventEmitter {
   constructor() {
     super();
     this.on('speech in', this.process.bind(this));
-    this.wit = new Wit('YWRTKHNK7MG6KXRS7SEIW3IMDSYRKPQB', {
+    this.wit = new Wit('E6AWMDVXHBRMM2TOIX3M53GNREPBFS7A', {
       say: this.say.bind(this),
       merge: this.merge.bind(this),
       error: this.error.bind(this)
