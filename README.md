@@ -8,6 +8,7 @@
 * toon
 * deezer
 * Uber
+* yay images
 
 # third-party API's / resources used
 

@@ -4,6 +4,42 @@ const EventEmitter = require('events').EventEmitter;
 const Wit = require('node-wit').Wit;
 const uuid = require('node-uuid');
 
+const fs = require('fs');
+const path_module = require('path');
+var actions = [];
+var plugins = [];
+var plugin;
+var pluginInstance;
+
+function LoadPlugins(path) {
+  console.log('Loading modules in path:', path);
+  fs.lstat(path, function(err, stat) {
+    console.log('stat.isDirectory()', stat.isDirectory());
+    if (stat.isDirectory()) {
+      // we have a directory: do a tree walk
+      fs.readdir(path, function(err, files) {
+        var f, l = files.length;
+        for (var i = 0; i < l; i++) {
+          console.log('loading:', files[i]);
+          f = path_module.join(path, files[i]);
+          LoadPlugins(f);
+        }
+      });
+    } else {
+      // we have a file: load it
+      plugin = require(path);
+      pluginInstance = new plugin();
+      plugins.push(pluginInstance);
+      actions.push(pluginInstance.getActions());
+
+
+    }
+  });
+}
+var DIR = path_module.join(__dirname, '../plugins');
+LoadPlugins(DIR);
+
+
 class SAM extends EventEmitter {
 
   constructor() {
