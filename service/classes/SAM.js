@@ -4,41 +4,40 @@ const EventEmitter = require('events').EventEmitter;
 const Wit = require('node-wit').Wit;
 const uuid = require('node-uuid');
 
-const actions = {
-
-  say(sessionId, context, message, cb) {
-    console.log(message);
-    cb();
-  },
-
-  merge(sessionId, context, entities, message, cb) {
-    console.log(entities);
-    cb(context);
-  },
-
-  error(sessionId, context, err) {
-    console.log(err.message);
-  }
-
-};
-
 class SAM extends EventEmitter {
 
   constructor() {
     super();
     this.on('speech in', this.process.bind(this));
-    this.wit = new Wit('YWRTKHNK7MG6KXRS7SEIW3IMDSYRKPQB', actions);
+    this.wit = new Wit('YWRTKHNK7MG6KXRS7SEIW3IMDSYRKPQB', {
+      say: this.say.bind(this),
+      merge: this.merge.bind(this),
+      error: this.error.bind(this)
+    });
     this.sessionId = uuid.v1();
     this.context = {};
     this.steps = 5;
   }
   
+  say(sessionId, context, message, cb) {
+    this.emit('speech out', message);
+    cb();
+  }
+
+  merge(sessionId, context, entities, message, cb) {
+    cb(context);
+  }
+
+  error(sessionId, context, error) {
+    console.log(error);
+  }
+
   process(message) {
     this.wit.runActions(
       this.sessionId,
       message,
       this.context,
-      (error, context) => {
+      (error, context, text) => {
         if (error) {
           // l.error(error);
         } else {
