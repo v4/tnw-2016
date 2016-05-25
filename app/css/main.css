@@ -4,16 +4,38 @@ html, body {
   background: #7ddfcc;
 }
 
+@-webkit-keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
+  0%   { left: 0; }
+  50%  { left: 50px; }
+  100% { left: 0; }
+}
+@-moz-keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
+  0%   { top: 0; }
+  50%  { top: 50px; }
+  100% { top: 0; }
+}
+
 .face-holder {
+  left: 0;
   position: relative;
   margin: 0 auto;
   margin-top: 10%;
+  -webkit-animation: FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* IE 10+, Fx 29+ */
 }
 
 .face {
+  top: 0;
+  position: relative;
   width: 450px;
   height: 450px;
   margin: 0 auto;
+  -webkit-animation: FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* IE 10+, Fx 29+ */
 }
 
 .face-item {
