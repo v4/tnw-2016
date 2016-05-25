@@ -10,8 +10,8 @@ var face = (function () { // eslint-disable-line
   var module = {}; // eslint-disable-line
   var moods = ['happy','sad','angry','neutral'];
 
+  module.hasOpenSpeechBubble = false;
 
-  
   module.removeAllMoodClasses = function () {
     moods.forEach(function(mood) {
       $('.face-brows').removeClass('face-' + mood);
@@ -60,11 +60,30 @@ var face = (function () { // eslint-disable-line
     // console.log('tapeface vocal expression set to: ', expression);
   };
 
+  module.updateSpeechBubblePos = function() {
+    var faceLeft = $('.face-holder').offset().left;
+    var faceTop = $('.face').offset().top;
+    // console.log('face position:', faceLeft, faceTop);
+    $('.speechbubble').css('left', faceLeft + 485);
+    $('.speechbubble').css('top', faceTop - 20);
+    if(module.hasOpenSpeechBubble === true) requestAnimationFrame(module.updateSpeechBubblePos);
+  };
+
   module.showSpeechBubble = function() {
     return Q.Promise(function(resolve, reject, notify) {
-
-
-      resolve('resolved!');
+      // move over tapeface to the left of the screen
+      $('.face-holder').addClass('face-holder-left');
+      module.hasOpenSpeechBubble = true;
+      requestAnimationFrame(module.updateSpeechBubblePos);
+      
+      setTimeout(function() {
+        $('.speechbubble').removeClass('invisible');
+        $('.speechbubble').addClass('popin');
+        setTimeout(function() {
+          // $('.face-holder').addClass('face-holder-left');
+          resolve('resolved!');
+        }, 750)
+      }, 2000);
 
       // reject(new Error("Speech Bubble Error! "));
 

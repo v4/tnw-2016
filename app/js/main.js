@@ -81,7 +81,9 @@ $(document).ready(function () {
   };
 
   // speech bubble
-  face.speechBubble('lalala', 'description');
-  face.speechBubbleImage('loadingIcon.png');
+  setTimeout(function() {
+    face.speechBubble('lalala', 'description');
+    face.speechBubbleImage('loadingIcon.png');
+  }, 1000);
 
 });

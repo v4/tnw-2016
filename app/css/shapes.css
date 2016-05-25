@@ -1,9 +1,9 @@
 
 .talkbubble {
-   width: 120px;
-   height: 80px;
-   background: red;
    position: relative;
+   width: 270px;
+   height: 150px;
+   background: rgba(0, 0, 0, 0.45);
    -moz-border-radius:    10px;
    -webkit-border-radius: 10px;
    border-radius:         10px;
@@ -13,10 +13,10 @@
    content:"";
    position: absolute;
    right: 100%;
-   top: 26px;
+   top: 60px;
    width: 0;
    height: 0;
    border-top: 13px solid transparent;
-   border-right: 26px solid red;
+   border-right: 26px solid rgba(0, 0, 0, 0.45);
    border-bottom: 13px solid transparent;
 }
