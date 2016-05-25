@@ -24,21 +24,28 @@ socket.on('speech out', (message) =>{
   console.log('speech out', message)
 });
 
-recognition.start();
+$(document).ready(function () {
+  
+  recognition.start();
 
-// face.makeAngry();
-// face.makeSad();
-// face.makeHappy();
-face.makeNeutral();
+  // face.makeAngry();
+  // face.makeSad();
+  // face.makeHappy();
+  face.makeNeutral();
 
-// face.setVocalExpression('a');
-// face.setVocalExpression('b');
-// face.setVocalExpression('o');
-// face.setVocalExpression('i');
-// face.setVocalExpression('');
+  // face.setVocalExpression('a');
+  // face.setVocalExpression('b');
+  // face.setVocalExpression('o');
+  // face.setVocalExpression('i');
+  // face.setVocalExpression('');
+  
+  mouth.create('audioElement', '.face-oscilloscope', {
+    frequencyBins : 20,
+    barPadding: 2,
+    height: '50',
+    width: '100'
+  });
 
-// such a nice async solution!
-// setTimeout(function() {
-//   mouth.create('.face-oscilloscope');
-//   mouth.start();
-// }, 500)
+  mouth.start();
+
+});

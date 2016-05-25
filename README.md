@@ -14,5 +14,5 @@
 * yayQuery
 * D3 (for spectrum analyser)
 * spectrum analyser in D3 : http://bignerdranch.github.io/music-frequency-d3/
-* 
+* socket.io
 
