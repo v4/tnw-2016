@@ -12,7 +12,7 @@ class Todoist extends Plugin {
 
     todoist.login({email: 'jaap@vermaire.com', password: 'staat in keepass'})
       .then(function(user){
-          console.log('todoist user', user)
+          // console.log('todoist user', user)
         },
         function(e) { console.error(e); });
 
