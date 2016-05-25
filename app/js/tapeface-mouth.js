@@ -12,7 +12,7 @@ var mouth = (function () { // eslint-disable-line
     var audioContext = new window.AudioContext();
     this.oscillator = audioContext.createOscillator();
     this.oscillator.type = 'sine';
-    this.oscillator.frequency.value = 100;
+    this.oscillator.frequency.value = 400;
     this.oscillator.start();
 
     // Create an Oscilloscope instance
@@ -25,7 +25,7 @@ var mouth = (function () { // eslint-disable-line
     this.oscilloscope = new Oscilloscope(container, audioContext);
     
     // Connect the oscillator-node to the oscilloscope
-    this.oscilloscope.connect(this.oscilloscope.analyserNode);
+    this.oscillator.connect(this.oscilloscope.analyserNode);
   }
 
   module.get = function () {
