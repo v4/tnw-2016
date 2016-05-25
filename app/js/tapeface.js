@@ -32,32 +32,32 @@ var face = (function () { // eslint-disable-line
   };
 
   module.makeAngry = function () {
-    console.log('tapeface is angry.');
+    // console.log('tapeface is angry.');
     module.setMood('angry');
     return true;
   };
 
   module.makeSad = function () {
-    console.log('tapeface is sad.');
+    // console.log('tapeface is sad.');
     module.setMood('sad');
     return true;
   };
 
   module.makeHappy = function () {
-    console.log('tapeface is happy.');
+    // console.log('tapeface is happy.');
     module.setMood('happy');
     return true;
   };
 
   module.makeNeutral = function () {
-    console.log('tapeface is neutral.');
+    // console.log('tapeface is neutral.');
     module.setMood('neutral');
     return true;
   };
 
   module.setVocalExpression = function (expression) {
     expression = expression || 'silent';
-    console.log('tapeface vocal expression set to: ', expression);
+    // console.log('tapeface vocal expression set to: ', expression);
   };
 
   return module;

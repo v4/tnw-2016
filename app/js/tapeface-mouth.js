@@ -75,9 +75,6 @@ var mouth = (function () {
     }
   }
 
-  module.get = function () {
-  }
-
   module.start = function () {
     // Run the loop
     module.renderChart();
