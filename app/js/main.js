@@ -37,15 +37,17 @@ $(document).ready(function () {
     audio.load();
     audio.play();
     mouth.create(audio, '.face-oscilloscope', {
-      frequencyBins : 20,
+      frequencyBins : 10,
       barPadding: 2,
-      height: '50',
+      height: '30',
       width: '75',
       fillColor: '#3541db'
     });
     mouth.start();
     mouth.setFillColor('#db4538');
-    recognition.start();
+    audio.addEventListener("ended", function(){
+      recognition.start();
+    });
   });
 
 
@@ -62,7 +64,7 @@ $(document).ready(function () {
   };
 
   socket.on('speech out', (message) =>{
-    console.log('speech out', message)
+    console.log('speech out', message);
   });
   
   recognition.start();
@@ -72,16 +74,20 @@ $(document).ready(function () {
 
   // face.setVocalExpression('a');
   
-  var mouthOptions = {
-    frequencyBins : 20,
-    barPadding: 2,
-    height: '50',
-    width: '75',
-    fillColor: '#3541db'
-  };
+  // var mouthOptions = {
+  //   frequencyBins : 20,
+  //   barPadding: 2,
+  //   height: '20',
+  //   width: '75',
+  //   fillColor: '#3541db'
+  // };
 
   // speech bubble
   face.speechBubble('lalala', 'description');
   face.speechBubbleImage('loadingIcon.png');
+
+  // debug
+  // face.makeHappy();
+  // socket.emit('speech in', { payload: 'hello' });
 
 });

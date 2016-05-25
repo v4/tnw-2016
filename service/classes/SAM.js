@@ -78,7 +78,7 @@ class SAM extends EventEmitter {
   }
 
   process(message) {
-    // if (this.idle) {
+    if (this.idle) {
       this.idle = false;
       this.wit.runActions(
         this.sessionId,
@@ -94,7 +94,7 @@ class SAM extends EventEmitter {
         },
         this.steps
       );
-    // }
+    }
   }
 
 }
