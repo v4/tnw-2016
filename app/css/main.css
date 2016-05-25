@@ -37,6 +37,22 @@ html, body {
   animation:         BG-ANIM-COLOR 15s infinite; /* IE 10+, Fx 29+ */
 }
 
+.bg-color.face-sad {
+  background: #ffcfab;
+}
+
+.bg-color.face-angry {
+  background: #ffc9b9;
+}
+
+.bg-color.face-happy {
+  background: #d9ffd2;
+}
+
+.bg-color.face-neutral {
+  background: #b8daff;
+}
+
 .page-container {
   width: 100%;
   height: 100%;
