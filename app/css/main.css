@@ -2,20 +2,23 @@
 
 @-moz-keyframes BG-ANIM-COLOR {
   0%   { background: #ffc9b9; }
-  50%  { background: #d9ffd2; }
-  100% { background: #b8daff; }
+  33%  { background: #d9ffd2; }
+  66% { background: #b8daff; }
+  100% { background: #ffc9b9; }
 }
 
 @-webkit-keyframes BG-ANIM-COLOR {
   0%   { background: #ffc9b9; }
-  50%  { background: #d9ffd2; }
-  100% { background: #b8daff; }
+  33%  { background: #d9ffd2; }
+  66% { background: #b8daff; }
+  100% { background: #ffc9b9; }
 }
 
 @keyframes BG-ANIM-COLOR {
   0%   { background: #ffc9b9; }
-  50%  { background: #d9ffd2; }
-  100% { background: #b8daff; }
+  33%  { background: #d9ffd2; }
+  66% { background: #b8daff; }
+  100% { background: #ffc9b9; }
 }
 
 html, body {

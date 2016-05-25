@@ -188,13 +188,13 @@
   margin: 0 auto;
   width: auto;
   height: auto;
-  top: 30px;
+  top: 10px;
   position: absolute;
 }
 
 .brow {
   width: 75px;
-  height: 20px;
+  height: 40px;
   position: absolute;
   background: #000;
 }
@@ -207,7 +207,7 @@
 }
 
 .brow-right {
-  left: calc(200px + 28px);
+  left: calc(200px + 30px);
 }
 
 /* SAD */
@@ -244,14 +244,16 @@
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
-  top: -20px;
+  top: -10px;
+  height: 10px;
 }
 
 .face-brows.face-neutral > .brow-right {
   -ms-transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
-  top: -20px;
+  top: -10px;
+  height: 10px;
 }
 
 /* HAPPY */
@@ -260,14 +262,14 @@
   -ms-transform: rotate(-10deg);
   -webkit-transform: rotate(-10deg);
   transform: rotate(-10deg); 
-  top: 20px;
+  top: 40px;
 }
 
 .face-brows.face-happy > .brow-right {
   -ms-transform: rotate(10deg);
   -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
-  top: 20px;
+  top: 40px;
 }
 
 /* FACE EYES */
@@ -283,23 +285,23 @@
   position: absolute;
   top: 40px;
   margin: 0 auto;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   /* width and height can be anything, as long as they're equal */
 }
 
 .eye-left {
-  left: calc(200px - 10px - 50px);
+  left: calc(200px - 30px - 50px);
 }
 
 .eye-right {
-  left: calc(200px + 20px + 50px);
+  left: calc(200px + 30px + 50px);
 }
 
 .eye-inner {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #FFF;
   margin: 0 auto;
@@ -313,6 +315,10 @@
 
 .face-eyes.face-happy > .eye > .eye-inner {
   background: #d9ffd2;
+}
+
+.face-eyes.face-neutral > .eye {
+  top: 30px;
 }
 
 .face-eyes.face-neutral > .eye > .eye-inner {
