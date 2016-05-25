@@ -18,8 +18,6 @@ recognition.onresult = function(event) {
 recognition.start();
 
 
-face.test()
-
 face.makeAngry()
 face.makeSad()
 face.makeHappy()

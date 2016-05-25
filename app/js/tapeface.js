@@ -16,10 +16,6 @@ var face = (function () { // eslint-disable-line
 
   // module.moduleProperty = 1
 
-  module.test = function () {
-    console.log('tapeface js responding. awaiting expression commands.')
-  }
-
   module.makeAngry = function () {
     console.log('tapeface is angry.')
   }
