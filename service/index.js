@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
   });
   
   sam.on('speech out', (message) => {
-    speech.emit('speech out', {
+    socket.emit('speech out', {
       payload: message
     });
   });

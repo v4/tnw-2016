@@ -1,16 +1,18 @@
+var recognition = new webkitSpeechRecognition();
 var socket = io('http://localhost:3000');
-socket.on('speech out', function (data) {
-  console.log(data);
+socket.on('speech out', (data) => {
+  console.log('speech out', data.payload);
+  recognition.start();
 });
 
-var recognition = new webkitSpeechRecognition();
 recognition.continuous = true;
 recognition.interimResults = true;
 recognition.onresult = function(event) {
   console.log(event);
-  if(event.results[0].isFinal){
-    console.log('SOCKETING:', event.results[0][0].transcript);
+  if(event.results[0].isFinal) {
+    console.log('speech in', event.results[0][0].transcript);
     socket.emit('speech in', { payload: event.results[0][0].transcript });
+    recognition.stop();
   }
 }
 recognition.start();
