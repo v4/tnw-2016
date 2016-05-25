@@ -29,15 +29,9 @@ $(document).ready(function () {
   recognition.start();
 
   // face.makeAngry();
-  // face.makeSad();
-  // face.makeHappy();
   face.makeNeutral();
 
   // face.setVocalExpression('a');
-  // face.setVocalExpression('b');
-  // face.setVocalExpression('o');
-  // face.setVocalExpression('i');
-  // face.setVocalExpression('');
   
   var mouthOptions = {
     frequencyBins : 20,
@@ -50,7 +44,7 @@ $(document).ready(function () {
   // params: audio object ID, HTML element target, options.
   mouth.create('audioElement', '.face-oscilloscope', mouthOptions);
   mouth.start();
-  // mouth.setFillColor('#db4538');
+  mouth.setFillColor('#db4538');
 
   // speech bubble
   face.speechBubble('lalala', 'description');

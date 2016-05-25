@@ -60,5 +60,31 @@ var face = (function () { // eslint-disable-line
     // console.log('tapeface vocal expression set to: ', expression);
   };
 
+  module.showSpeechBubble = function() {
+    return Q.Promise(function(resolve, reject, notify) {
+
+
+      resolve('resolved!');
+
+      // reject(new Error("Speech Bubble Error! "));
+
+      // notify();
+    });
+  }
+
+  module.speechBubble = function(title, description) {
+    module.showSpeechBubble()
+    .then(function() {
+      console.log('show Speech Bubble should be resolved!');
+    });
+  };
+
+  module.speechBubbleImage = function(imageUrl) {
+    module.showSpeechBubble()
+    .then(function() {
+      console.log('show Speech Bubble should be resolved!');
+    });
+  };
+
   return module;
 }());
