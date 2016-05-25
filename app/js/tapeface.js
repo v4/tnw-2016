@@ -23,7 +23,7 @@ var face = (function () { // eslint-disable-line
       $('.face-eyes').removeClass('face-' + mood);
       // TODO:$('.face-mouth').removeClass('face-mouth-' + mood);
     });
-    return;
+    return true;
   };
 
   module.setMood = function (mood) {
@@ -31,31 +31,31 @@ var face = (function () { // eslint-disable-line
     $('.face-eyes').addClass('face-' + mood);
     $('.face-brows').addClass('face-' + mood);
     // TODO: $('.face-mouth').addClass('.face-' . mood);
-    return;
+    return true;
   };
 
   module.makeAngry = function () {
     console.log('tapeface is angry.');
     module.setMood('angry');
-    return;
+    return true;
   };
 
   module.makeSad = function () {
     console.log('tapeface is sad.');
     module.setMood('sad');
-    return;
+    return true;
   };
 
   module.makeHappy = function () {
     console.log('tapeface is happy.');
     module.setMood('happy');
-    return;
+    return true;
   };
 
   module.makeNeutral = function () {
     console.log('tapeface is neutral.');
     module.setMood('neutral');
-    return;
+    return true;
   };
 
   module.setVocalExpression = function (expression) {

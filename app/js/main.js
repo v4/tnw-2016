@@ -22,7 +22,6 @@ socket.on('speech out', (message) =>{
 
 recognition.start();
 
-
 face.makeAngry();
 face.makeSad();
 face.makeHappy();
