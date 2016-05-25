@@ -12,7 +12,7 @@
 
 * Slaap lekker
 
-* Task to do (
+* Task to do (todoist)
 * Muziek suggestie aan de hand van geo location (deezer)
 * Info aan de hand van geo location
 * Je hebt email van ...
