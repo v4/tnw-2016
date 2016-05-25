@@ -1,14 +1,17 @@
 
+.sad { 
+  background: #ffcfabff; 
+}
 
-.angry, .sad { 
-  background: #ffc9b9ff; 
+.angry { 
+  background: #ffb2b6ff; 
 }
 
 .happy, .amazed { 
   background: #d9ffd2ff;
 }
 
-.indifferent, .static, .unknown {
+.neutral, .indifferent, .static, .unknown {
   background: #b8daffff;
 }
 
