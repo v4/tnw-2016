@@ -8,6 +8,7 @@ console.log('tapeface.js being loaded...');
 
 var face = (function () { // eslint-disable-line
   var module = {}; // eslint-disable-line
+  var moods = ['happy','sad','angry','neutral'];
   // var privateVariable = 1 // eslint-disable-line
 
   // function privateMethod () { // eslint-disable-line
@@ -16,43 +17,50 @@ var face = (function () { // eslint-disable-line
 
   // module.moduleProperty = 1
 
+  module.removeAllMoodClasses = function () {
+    moods.forEach(function(mood) {
+      $('.face-brows').removeClass('face-' + mood);
+      $('.face-eyes').removeClass('face-' + mood);
+      // TODO:$('.face-mouth').removeClass('face-mouth-' + mood);
+    });
+    return;
+  };
+
+  module.setMood = function (mood) {
+    this.removeAllMoodClasses();
+    $('.face-eyes').addClass('face-' + mood);
+    $('.face-brows').addClass('face-' + mood);
+    // TODO: $('.face-mouth').addClass('.face-' . mood);
+    return;
+  };
+
   module.makeAngry = function () {
     console.log('tapeface is angry.');
-    this.setMood('angry');
+    module.setMood('angry');
+    return;
   };
 
   module.makeSad = function () {
     console.log('tapeface is sad.');
-    this.setMood('sad');
+    module.setMood('sad');
+    return;
   };
 
   module.makeHappy = function () {
     console.log('tapeface is happy.');
-    this.setMood('happy');
+    module.setMood('happy');
+    return;
   };
 
   module.makeNeutral = function () {
     console.log('tapeface is neutral.');
-    this.setMood('neutral');
+    module.setMood('neutral');
+    return;
   };
 
   module.setVocalExpression = function (expression) {
     expression = expression || 'silent';
     console.log('tapeface vocal expression set to: ', expression);
-  };
-
-  module.removeAllMoodClasses = function () {
-    $('.face-brows').removeClass();
-    $('.face-eyes').removeClass();
-    //TODO: $('.face-mouth').removeClass();
-    
-  };
-
-  module.setMood = function (mood) {
-    this.removeAllMoodClasses();
-    $('.face-eyes').addClass('.face-' + mood);
-    $('.face-brows').addClass('.face-' + mood);
-    //TODO: $('.face-mouth').addClass('.face-' . mood);
   };
 
   return module;
