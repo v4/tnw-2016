@@ -54,7 +54,7 @@
   -moz-animation:    FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Fx 5+ */
   -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Opera 12+ */
   animation:         FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* IE 10+, Fx 29+ */
-  background: rgba(255, 255, 255, 0.15);
+  // background: rgba(255, 255, 255, 0.15);
 }
 
 .face {
@@ -68,11 +68,11 @@
   -moz-animation:    FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Fx 5+ */
   -o-animation:      FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Opera 12+ */
   animation:         FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* IE 10+, Fx 29+ */
-  background: rgba(0, 0, 0, 0.15);
+  // background: rgba(0, 0, 0, 0.15);
 }
 
 .face-shadow {
-  margin-left: 125px;
+  margin-left: 110px;
   background: rgba(0, 0, 0, 0.25);
   position: fixed;
   bottom: 5%;
@@ -86,8 +86,26 @@
 .face-item {
   margin: 0 auto;
   background: #000;
+  /*
   width: 5px;
   height: 5px;
+  */
+}
+
+.face-brows {
+  
+}
+
+.face-brows.face-angry > .brow-left {
+  -ms-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg); 
+}
+
+.face-brows.face-angry > .brow-right {
+  -ms-transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
 }
 
 .brow {
@@ -99,7 +117,7 @@
 }
 
 .brow-left { 
-  left: calc(225px - 75px - 30px);
+  left: calc(225px - 88px - 30px);
   -ms-transform: rotate(-7deg);
   -webkit-transform: rotate(-7deg);
   transform: rotate(-7deg); 
@@ -147,7 +165,7 @@
 
 .nose {
   position: relative;
-  top: 100px;
+  top: 120px;
   right: 10px;
   width: 0 !important;
   height: 0 !important;
@@ -161,6 +179,8 @@
   text-align: center;
   font-size: 100px;
   font-family: Chango, sans-serif;
+  padding: 0;
+  margin: 0;
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); 
@@ -169,16 +189,10 @@
 }
 
 .mouth {
-  // text-align: center;
-  // position: relative;
-  // width: auto;
-  // height: auto;
-  // display: block;
-  // top: 125px;
-  // margin: 0;
-  // padding: 0;
+  text-align: center;
+  top: 75px;
   color: black;
-  // position: relative;
+  position: relative;
   background: transparent;
   text-align: center;
 }
