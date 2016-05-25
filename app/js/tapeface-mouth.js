@@ -31,15 +31,15 @@ $(document).ready(function () {
   //var frequencyData = new Uint8Array(analyser.frequencyBinCount);
   var frequencyData = new Uint8Array(200);
 
-  var svgHeight = '200';
-  var svgWidth = '500';
+  var svgHeight = '50';
+  var svgWidth = '300';
   var barPadding = '1';
 
   function createSvg(parent, height, width) {
     return d3.select(parent).append('svg').attr('height', height).attr('width', width);
   }
 
-  var svg = createSvg('body', svgHeight, svgWidth);
+  var svg = createSvg('.face-oscilloscope', svgHeight, svgWidth);
 
   // Create our initial D3 chart.
   svg.selectAll('rect')
