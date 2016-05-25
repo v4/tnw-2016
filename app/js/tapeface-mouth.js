@@ -1,6 +1,6 @@
 
 
-var oscilloscope = (function () { // eslint-disable-line
+var mouth = (function () { // eslint-disable-line
   
   var module = {}; // eslint-disable-line
   
@@ -12,7 +12,7 @@ var oscilloscope = (function () { // eslint-disable-line
     var audioContext = new window.AudioContext();
     this.oscillator = audioContext.createOscillator();
     this.oscillator.type = 'sine';
-    this.oscillator.frequency.value = 400;
+    this.oscillator.frequency.value = 100;
     this.oscillator.start();
 
     // Create an Oscilloscope instance

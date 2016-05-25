@@ -38,6 +38,6 @@ face.setVocalExpression('');
 
 // such a nice async solution!
 setTimeout(function() {
-  oscilloscope.create('.face-oscilloscope');
-  oscilloscope.start();
+  mouth.create('.face-oscilloscope');
+  mouth.start();
 }, 500)
