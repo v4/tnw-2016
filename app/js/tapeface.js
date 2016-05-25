@@ -20,5 +20,26 @@ var face = (function () { // eslint-disable-line
     console.log('tapeface js responding. awaiting expression commands.')
   }
 
+  module.makeAngry = function () {
+    console.log('tapeface is angry.')
+  }
+
+  module.makeSad = function () {
+    console.log('tapeface is sad.')
+  }
+
+  module.makeHappy = function () {
+    console.log('tapeface is happy.')
+  }
+
+  module.makeNeutral = function () {
+    console.log('tapeface is neutral.')
+  }
+
+  module.setVocalExpression = function (expression) {
+    expression = expression || 'silent';
+    console.log('tapeface vocal expression set to: ', expression);
+  }
+
   return module
 }())

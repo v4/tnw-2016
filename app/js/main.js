@@ -16,3 +16,17 @@ recognition.onresult = function(event) {
   }
 }
 recognition.start();
+
+
+face.test()
+
+face.makeAngry()
+face.makeSad()
+face.makeHappy()
+face.makeNeutral()
+
+face.setVocalExpression('a')
+face.setVocalExpression('b')
+face.setVocalExpression('o')
+face.setVocalExpression('i')
+face.setVocalExpression('')
