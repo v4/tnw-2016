@@ -22,8 +22,8 @@ var mouth = (function () {
     var frequencyData = new Uint8Array(options.frequencyBins);
 
     var svgHeight = options.height;
-    var svgWidth = '50';
-    var barPadding = '2';
+    var svgWidth = options.width;
+    var barPadding = options.barPadding;
 
     function createSvg(parent, height, width) {
       return d3.select(parent).append('svg').attr('height', height).attr('width', width);

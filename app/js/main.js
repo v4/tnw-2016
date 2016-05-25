@@ -43,7 +43,7 @@ $(document).ready(function () {
     frequencyBins : 20,
     barPadding: 2,
     height: '50',
-    width: '100'
+    width: '75'
   });
 
   mouth.start();
