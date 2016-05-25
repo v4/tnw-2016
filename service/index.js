@@ -11,10 +11,9 @@ const watson = require('watson-developer-cloud');
 // For local development, replace username and password
 var textToSpeech = watson.text_to_speech({
   version: 'v1',
-  username: 'jaap@vermaire.com',
-  password: '2419107NeverTellMichaelMyPass'
+  password: "kCGqg4aLZtOH",
+  username: "1df91b4b-185a-41e7-bcf4-33a43fd4a55e"
 });
-
 
 app.use(express.static('../app'));
 
@@ -27,22 +26,30 @@ io.on('connection', (socket) => {
   
   sam.on('speech out', (message) => {
     console.log('SAM: speech out: ', message);
-
-    var transcript = textToSpeech.synthesize({text: message});
-    console.log('transcript', transcript);
+    var transcript = textToSpeech.synthesize({
+      text: message,
+      voice: 'en-US_AllisonVoice'
+    });
     
     transcript.on('response', function(response) {
-      socket.emit('speech out', {
-        payload: response
-      });
+      // socket.emit('speech out', {
+      //   payload: response
+      // });
     });
+    
     transcript.on('error', function(error) {
       console.error(error)
     });
 
-    //transcript.pipe(socket);
-    
-
+    let audio = [];
+    transcript.on('data', (buffer) => {
+      audio.push(buffer);
+    });
+    transcript.on('end', () => {
+      socket.emit('speech out', {
+        payload: Buffer.concat(audio).toString('base64')
+      });
+    });
   });
 });
 
