@@ -136,7 +136,7 @@
 
 .eye { 
   position: absolute;
-  top: 50px;
+  top: 40px;
   margin: 0 auto;
   width: 20px;
   height: 20px;
@@ -145,11 +145,11 @@
 }
 
 .eye-left {
-  left: calc(200px - 75px - 30px);
+  left: calc(200px - 10px - 50px);
 }
 
 .eye-right {
-  left: calc(200px + 30px);
+  left: calc(200px + 20px + 50px);
 }
 
 .eye-inner {
