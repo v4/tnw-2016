@@ -1,30 +1,30 @@
 @import url(https://fonts.googleapis.com/css?family=Chango);
 
 @-moz-keyframes BG-ANIM-COLOR {
-  0%   { background: #ffc9b9ff; }
-  50%  { background: #d9ffd2ff; }
-  100% { background: #b8daffff; }
+  0%   { background: #ffc9b9; }
+  50%  { background: #d9ffd2; }
+  100% { background: #b8daff; }
 }
 
 @-webkit-keyframes BG-ANIM-COLOR {
-  0%   { background: #ffc9b9ff; }
-  50%  { background: #d9ffd2ff; }
-  100% { background: #b8daffff; }
+  0%   { background: #ffc9b9; }
+  50%  { background: #d9ffd2; }
+  100% { background: #b8daff; }
 }
 
 @keyframes BG-ANIM-COLOR {
-  0%   { background: #ffc9b9ff; }
-  50%  { background: #d9ffd2ff; }
-  100% { background: #b8daffff; }
+  0%   { background: #ffc9b9; }
+  50%  { background: #d9ffd2; }
+  100% { background: #b8daff; }
 }
 
 html, body {
-  background: #7ddfcc;
+  // background: #7ddfcc;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  transition: background 1s;
+  transition: all 1s;
 }
 
 .bg-anim-color {
