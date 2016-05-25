@@ -1,0 +1,60 @@
+
+
+html, body {
+  background: #7ddfcc;
+}
+
+.face-holder {
+  margin: 0 auto;
+}
+
+.face {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.brow {
+  background: #000;
+  width: 75px;
+  height: 20px;
+  position: relative;
+}
+
+.brow-right {
+  -ms-transform: rotate(7deg);
+  -webkit-transform: rotate(7deg);
+  transform: rotate(7deg);
+  right: -100px;
+}
+
+.brow-left {
+  left: 100px;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg); 
+}
+
+.eye { 
+
+}
+
+.eye-left {
+
+}
+
+.eye-right {
+
+}
+
+.nose {
+
+}
+
+.moustache {
+
+}
+
+.mouth {
+
+}
