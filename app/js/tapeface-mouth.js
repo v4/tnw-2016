@@ -3,14 +3,15 @@
 var mouth = (function () {
   
   var module = {};
-  
-  module.create = function (audioElementId, target, options) {
+  var audioSrc = null;
+
+  module.create = function (audioElement, target, options) {
 
     //TODO for options: width, barPadding
 
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    var audioElement = document.getElementById(audioElementId);
-    var audioSrc = audioCtx.createMediaElementSource(audioElement);
+    // var audioElement = document.getElementById(audioElement);
+    audioSrc = audioCtx.createMediaElementSource(audioElement);
     var analyser = audioCtx.createAnalyser();
 
     audioElement.audioCtx = true;
@@ -54,7 +55,7 @@ var mouth = (function () {
 
        // Copy frequency data to frequencyData array.
        analyser.getByteFrequencyData(frequencyData);
-
+       
        // Update d3 chart with new data.
        svg.selectAll('rect')
           .data(frequencyData)
@@ -78,8 +79,17 @@ var mouth = (function () {
   }
 
   module.start = function () {
+    
   }
-
+  
+  module.update = function () {
+    audioElement.load();
+  }
+  
+  // module.stop = function (params) {
+  //   if (audioSrc) audioSrc.disconnect();
+  // }
+  
   return module;
 
 }());
