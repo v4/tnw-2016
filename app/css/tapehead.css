@@ -39,6 +39,98 @@
   100% { top: 0; }
 }
 
+/* EYE BLINKING */
+
+@-webkit-keyframes FACE-ANIM-EYES-BLINK {
+  0%   { opacity: 1; }
+  14%   { opacity: 1; }
+
+  15%   { opacity: 0; }
+
+  18%   { opacity: 1; }
+  33%   { opacity: 1; }
+
+  34%   { opacity: 0; }
+
+  38%   { opacity: 1; }
+  34%   { opacity: 1; }
+
+  45%   { opacity: 0; }
+
+  47%   { opacity: 1; }
+  70%   { opacity: 1; }
+
+  72%   { opacity: 0; }
+
+  76%   { opacity: 1; }
+  89%   { opacity: 1; }
+  
+  90%   { opacity: 0; }
+
+  92%   { opacity: 1; }
+  99%   { opacity: 1; }
+}
+
+@-moz-keyframes FACE-ANIM-EYES-BLINK {
+  0%   { opacity: 1; }
+  14%   { opacity: 1; }
+
+  15%   { opacity: 0; }
+
+  18%   { opacity: 1; }
+  33%   { opacity: 1; }
+
+  34%   { opacity: 0; }
+
+  38%   { opacity: 1; }
+  34%   { opacity: 1; }
+
+  45%   { opacity: 0; }
+
+  47%   { opacity: 1; }
+  70%   { opacity: 1; }
+
+  72%   { opacity: 0; }
+
+  76%   { opacity: 1; }
+  89%   { opacity: 1; }
+  
+  90%   { opacity: 0; }
+
+  92%   { opacity: 1; }
+  99%   { opacity: 1; }
+}
+
+@keyframes FACE-ANIM-EYES-BLINK {
+  0%   { opacity: 1; }
+  14%   { opacity: 1; }
+
+  15%   { opacity: 0; }
+
+  18%   { opacity: 1; }
+  33%   { opacity: 1; }
+
+  34%   { opacity: 0; }
+
+  38%   { opacity: 1; }
+  34%   { opacity: 1; }
+
+  45%   { opacity: 0; }
+
+  47%   { opacity: 1; }
+  70%   { opacity: 1; }
+
+  72%   { opacity: 0; }
+
+  76%   { opacity: 1; }
+  89%   { opacity: 1; }
+  
+  90%   { opacity: 0; }
+
+  92%   { opacity: 1; }
+  99%   { opacity: 1; }
+}
+
 /* FACE STYLES AND ANIMATIONS */
 
 .face-holder {
@@ -96,7 +188,29 @@
   margin: 0 auto;
   width: auto;
   height: auto;
+  top: 30px;
+  position: absolute;
 }
+
+.brow {
+  width: 75px;
+  height: 20px;
+  position: absolute;
+  background: #000;
+}
+
+.brow-left { 
+  left: calc(200px - 88px - 30px);
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg); 
+}
+
+.brow-right {
+  left: calc(200px + 28px);
+}
+
+/* HAPPY */
 
 .face-brows.face-angry > .brow-left {
   -ms-transform: rotate(10deg);
@@ -110,29 +224,42 @@
   transform: rotate(-10deg);
 }
 
-.brow {
-  top: 20px;
-  width: 75px;
-  height: 20px;
-  position: absolute;
-  // background: #000;
+/* NEUTRAL */
+
+.face-brows.face-happy > .brow-left {
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg); 
 }
 
-.brow-left { 
-  left: calc(225px - 88px - 30px);
-  -ms-transform: rotate(-7deg);
-  -webkit-transform: rotate(-7deg);
-  transform: rotate(-7deg); 
+.face-brows.face-happy > .brow-right {
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
-.brow-right {
-  left: calc(225px + 30px);
-  -ms-transform: rotate(7deg);
-  -webkit-transform: rotate(7deg);
-  transform: rotate(7deg);
+/* HAPPY */
+
+.face-brows.face-happy > .brow-left {
+  -ms-transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg); 
+}
+
+.face-brows.face-happy > .brow-right {
+  -ms-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
 }
 
 /* FACE EYES */
+
+.face-eyes > .eye .eye-inner {
+  -webkit-animation: FACE-ANIM-EYES-BLINK 7s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-EYES-BLINK 7s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-EYES-BLINK 7s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-EYES-BLINK 7s infinite; /* IE 10+, Fx 29+ */
+}
 
 .eye { 
   position: absolute;
@@ -162,7 +289,18 @@
   transition: all 0.5s;
 }
 
-// .eye-top          { top: 0; }
-// .eye-middle       { top: 12px; }
-// .eye-bottom       { top: 20px; }
-// .eye-rock-bottom  { top: 27px;}
+/* EYE EXPRESSIONS */
+
+/* HAPPY */
+
+.face-eyes.face-happy > .eye-left {
+  // -ms-transform: rotate(-10deg);
+  // -webkit-transform: rotate(-10deg);
+  // transform: rotate(-10deg); 
+}
+
+.face-eyes.face-happy > .eye-right {
+  // -ms-transform: rotate(10deg);
+  // -webkit-transform: rotate(10deg);
+  // transform: rotate(10deg);
+}
