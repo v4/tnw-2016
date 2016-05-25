@@ -20,6 +20,7 @@ class SAM extends EventEmitter {
   }
   
   say(sessionId, context, message, cb) {
+    console.log('sam say:' , message, cb);
     this.emit('speech out', message);
     cb();
   }

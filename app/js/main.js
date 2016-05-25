@@ -14,7 +14,12 @@ recognition.onresult = function(event) {
     socket.emit('speech in', { payload: event.results[0][0].transcript });
     recognition.stop();
   }
-}
+};
+
+socket.on('speech out', (message) =>{
+  console.log('speech out', message)
+});
+
 recognition.start();
 
 
