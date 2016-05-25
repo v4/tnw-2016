@@ -9,13 +9,15 @@ console.log('tapeface.js being loaded...');
 var face = (function () { // eslint-disable-line
   var module = {}; // eslint-disable-line
   var moods = ['happy','sad','angry','neutral'];
+
+
   
   module.removeAllMoodClasses = function () {
     moods.forEach(function(mood) {
       $('.face-brows').removeClass('face-' + mood);
       $('.face-eyes').removeClass('face-' + mood);
       $('.bg-color').removeClass('face-' + mood);
-      // TODO:$('.face-mouth').removeClass('face-mouth-' + mood);
+      // because of SVG / D3, we need
     });
     return true;
   };

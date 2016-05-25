@@ -52,4 +52,6 @@ $(document).ready(function () {
 
   mouth.start();
 
+  mouth.setFillColor('#db4538');
+
 });
