@@ -20,3 +20,4 @@
 * Je bent bijna thuis, ik zet vast een comfy tempratuurtje op (toon)
 * Er is vetraging op je route, zal ik een uber voor je boeken? (uber)
 * Kun je het volgende voor mij vertalen?
+
