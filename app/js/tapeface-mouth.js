@@ -1,6 +1,6 @@
 
 
-var face = (function () { // eslint-disable-line
+var oscilloscope = (function () { // eslint-disable-line
   
   var module = {}; // eslint-disable-line
   
