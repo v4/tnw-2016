@@ -6,8 +6,7 @@ var oscilloscope = (function () { // eslint-disable-line
   
   module.oscillator = null;
 
-  module.create = function (container) {
-    console.log('creating oscilloscope');
+  function createOscillator () {
     // Create an audio-context
     var audioContext = new window.AudioContext();
     this.oscillator = audioContext.createOscillator();
@@ -22,17 +21,19 @@ var oscilloscope = (function () { // eslint-disable-line
     //          and can connect to the destination.
     //          If no audio-context is specified, a new one will be created created.
     
-    var oscilloscope = new Oscilloscope(container, audioContext);
+    var oscilloscope = new Oscilloscope('.face-oscilloscope', audioContext);
 
     // Connect the oscillator-node to the oscilloscope
     this.oscillator.connect(oscilloscope.analyserNode);
   }
 
-  module.get = function () {
+  createOscillator();
+
+  module.getOscillator = function () {
     return this.oscillator;
   }
 
-  module.start = function () {
+  module.startOscilloscope = function () {
     // Start the oscilloscope
     this.oscilloscope.start();
   }
