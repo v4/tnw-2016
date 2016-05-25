@@ -85,8 +85,12 @@ $(document).ready(function () {
   // speech bubble
   setTimeout(function() {
     face.speechBubble('lalala', 'description');
-    face.speechBubbleImage('loadingIcon.png');
+    // content
   }, 1000);
+
+  setTimeout(function() {
+    face.speechBubbleImage('loadingIcon.png');
+  }, 6000);
 
   // debug
   // face.makeHappy();

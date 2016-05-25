@@ -80,9 +80,8 @@ var face = (function () { // eslint-disable-line
         $('.speechbubble').removeClass('invisible');
         $('.speechbubble').addClass('popin');
         setTimeout(function() {
-          // $('.face-holder').addClass('face-holder-left');
           resolve('resolved!');
-        }, 750)
+        }, 500)
       }, 2000);
 
       // reject(new Error("Speech Bubble Error! "));
