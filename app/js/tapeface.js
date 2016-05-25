@@ -9,14 +9,7 @@ console.log('tapeface.js being loaded...');
 var face = (function () { // eslint-disable-line
   var module = {}; // eslint-disable-line
   var moods = ['happy','sad','angry','neutral'];
-  // var privateVariable = 1 // eslint-disable-line
-
-  // function privateMethod () { // eslint-disable-line
-  //   // ...
-  // }
-
-  // module.moduleProperty = 1
-
+  
   module.removeAllMoodClasses = function () {
     moods.forEach(function(mood) {
       $('.face-brows').removeClass('face-' + mood);

@@ -35,3 +35,5 @@ face.setVocalExpression('b');
 face.setVocalExpression('o');
 face.setVocalExpression('i');
 face.setVocalExpression('');
+
+oscilloscope.create('.face-oscilloscope');
