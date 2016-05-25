@@ -70,6 +70,14 @@
   // background: rgba(0, 0, 0, 0.15);
 }
 
+.face-head {
+  width: 400px;
+  height: 100px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 10px;
+}
+
 .face-shadow {
   margin-left: 110px;
   background: rgba(0, 0, 0, 0.25);
@@ -85,7 +93,9 @@
 /* FACE EYEBROWS */
 
 .face-brows {
-  
+  margin: 0 auto;
+  width: auto;
+  height: auto;
 }
 
 .face-brows.face-angry > .brow-left {
@@ -122,22 +132,24 @@
   transform: rotate(7deg);
 }
 
+/* FACE EYES */
+
 .eye { 
   position: absolute;
   top: 50px;
   margin: 0 auto;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   /* width and height can be anything, as long as they're equal */
 }
 
 .eye-left {
-  left: calc(225px - 75px - 30px);
+  left: calc(200px - 75px - 30px);
 }
 
 .eye-right {
-  left: calc(225px + 30px);
+  left: calc(200px + 30px);
 }
 
 .eye-inner {
@@ -150,7 +162,7 @@
   transition: all 0.5s;
 }
 
-.eye-top          { top: 0; }
-.eye-middle       { top: 12px; }
-.eye-bottom       { top: 20px; }
-.eye-rock-bottom  { top: 27px;}
+// .eye-top          { top: 0; }
+// .eye-middle       { top: 12px; }
+// .eye-bottom       { top: 20px; }
+// .eye-rock-bottom  { top: 27px;}
