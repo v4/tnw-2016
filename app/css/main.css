@@ -1,41 +1,111 @@
 @import url(https://fonts.googleapis.com/css?family=Chango);
 
-html, body {
-  background: #7ddfcc;
+@-moz-keyframes BG-ANIM-COLOR {
+  0%   { background: #ffc9b9ff; }
+  50%  { background: #d9ffd2ff; }
+  100% { background: #b8daffff; }
 }
+
+@-webkit-keyframes BG-ANIM-COLOR {
+  0%   { background: #ffc9b9ff; }
+  50%  { background: #d9ffd2ff; }
+  100% { background: #b8daffff; }
+}
+
+@keyframes BG-ANIM-COLOR {
+  0%   { background: #ffc9b9ff; }
+  50%  { background: #d9ffd2ff; }
+  100% { background: #b8daffff; }
+}
+
+// LEFT - RIGHT
 
 @-webkit-keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
   0%   { left: 0; }
   50%  { left: 50px; }
   100% { left: 0; }
 }
+
+@-moz-keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
+  0%   { left: 0; }
+  50%  { left: 50px; }
+  100% { left: 0; }
+}
+
+@keyframes FACE-ANIM-HOVER-LEFT-RIGHT {
+  0%   { left: 0; }
+  50%  { left: 50px; }
+  100% { left: 0; }
+}
+
+// UP AND DOWN
+
+@-webkit-keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
+  0%   { top: 0; }
+  50%  { top: 50px; }
+  100% { top: 0; }
+}
+
 @-moz-keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
   0%   { top: 0; }
   50%  { top: 50px; }
   100% { top: 0; }
 }
 
+@keyframes FACE-ANIM-HOVER-UP-AND-DOWN {
+  0%   { top: 0; }
+  50%  { top: 50px; }
+  100% { top: 0; }
+}
+
+html, body {
+  // background: #7ddfcc;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-anim-color {
+  -webkit-animation: BG-ANIM-COLOR 15s infinite; /* Safari 4+ */
+  -moz-animation:    BG-ANIM-COLOR 15s infinite; /* Fx 5+ */
+  -o-animation:      BG-ANIM-COLOR 15s infinite; /* Opera 12+ */
+  animation:         BG-ANIM-COLOR 15s infinite; /* IE 10+, Fx 29+ */
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .face-holder {
+  top: 0;
   left: 0;
+  width: 450px;
+  height: 450px;
   position: relative;
   margin: 0 auto;
   margin-top: 10%;
-  -webkit-animation: FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* Safari 4+ */
-  -moz-animation:    FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* Fx 5+ */
-  -o-animation:      FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* Opera 12+ */
-  animation:         FACE-ANIM-HOVER-UP-AND-DOWN 5s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-HOVER-UP-AND-DOWN 11s infinite; /* IE 10+, Fx 29+ */
 }
 
 .face {
   top: 0;
-  position: relative;
+  left: 0;
   width: 450px;
   height: 450px;
+  position: relative;
   margin: 0 auto;
-  -webkit-animation: FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* Safari 4+ */
-  -moz-animation:    FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* Fx 5+ */
-  -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* Opera 12+ */
-  animation:         FACE-ANIM-HOVER-LEFT-RIGHT 5s infinite; /* IE 10+, Fx 29+ */
+  -webkit-animation: FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Safari 4+ */
+  -moz-animation:    FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Fx 5+ */
+  -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Opera 12+ */
+  animation:         FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* IE 10+, Fx 29+ */
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .face-item {
@@ -48,46 +118,48 @@ html, body {
 .brow {
   width: 75px;
   height: 20px;
-  position: relative;
-  background: blue;
+  position: absolute;
+  // background: #000;
 }
 
 .brow-right {
+  right: 30px;
   -ms-transform: rotate(7deg);
   -webkit-transform: rotate(7deg);
   transform: rotate(7deg);
-  right: -100px;
 }
 
 .brow-left {
-  left: 100px;
+  left: -75px - 30px;
   -ms-transform: rotate(-7deg);
   -webkit-transform: rotate(-7deg);
   transform: rotate(-7deg); 
 }
 
 .eye { 
+  position: absolute;
+  top: 30px;
   margin: 0 auto;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   /* width and height can be anything, as long as they're equal */
 }
 
 .eye-inner {
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #FFF;
   margin: 0 auto;
 }
 
 .eye-left {
-  left: 100px;
+  left: -40px;
 }
 
 .eye-right {
-  right: -100px;
+  right: 10px;
 }
 
 .nose {
@@ -96,10 +168,12 @@ html, body {
   border-style: solid;
   background: none;
   border-width: 20px 20px 0 20px;
-  border-color: green transparent transparent transparent;
+  border-color: #000000 transparent transparent transparent;
 }
 
 .mouth-piece {
+  margin: 0;
+  padding: 0;
   text-align: center;
   font-size: 100px;
   font-family: Chango, sans-serif;
@@ -112,7 +186,7 @@ html, body {
 
 .moustache {
   width: 50px;
-  heigt: 50px;
+  height: 30px;
   color: black;
   background: transparent;
   text-align: center;
