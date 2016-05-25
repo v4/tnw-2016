@@ -49,9 +49,11 @@ $(document).ready(function () {
   
   // params: audio object ID, HTML element target, options.
   mouth.create('audioElement', '.face-oscilloscope', mouthOptions);
-
   mouth.start();
+  // mouth.setFillColor('#db4538');
 
-  mouth.setFillColor('#db4538');
+  // speech bubble
+  face.speechBubble('lalala', 'description');
+  face.speechBubbleImage('loadingIcon.png');
 
 });
