@@ -43,6 +43,8 @@ $(document).ready(function () {
       width: '75',
       fillColor: '#3541db'
     });
+    mouth.start();
+    mouth.setFillColor('#db4538');
     recognition.start();
   });
 
@@ -66,14 +68,20 @@ $(document).ready(function () {
   recognition.start();
 
   // face.makeAngry();
-  // face.makeSad();
-  // face.makeHappy();
   face.makeNeutral();
 
   // face.setVocalExpression('a');
-  // face.setVocalExpression('b');
-  // face.setVocalExpression('o');
-  // face.setVocalExpression('i');
-  // face.setVocalExpression('');
   
+  var mouthOptions = {
+    frequencyBins : 20,
+    barPadding: 2,
+    height: '50',
+    width: '75',
+    fillColor: '#3541db'
+  };
+
+  // speech bubble
+  face.speechBubble('lalala', 'description');
+  face.speechBubbleImage('loadingIcon.png');
+
 });

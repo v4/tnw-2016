@@ -171,15 +171,15 @@
 }
 
 .face-shadow {
-  margin-left: 110px;
-  background: rgba(0, 0, 0, 0.25);
+  margin-left: 100px;
+  background: rgba(0, 0, 0, 0.20);
   position: fixed;
   bottom: 5%;
-  width: 200px;
-  height: 25px;
-  -moz-border-radius: 100px / 30px;
-  -webkit-border-radius: 100px / 30px;
-  border-radius: 100px / 30px;
+  width: 250px;
+  height: 20px;
+  -moz-border-radius: 100px / 60px;
+  -webkit-border-radius: 100px / 60px;
+  border-radius: 100px / 60px;
 }
 
 /* FACE EYEBROWS */

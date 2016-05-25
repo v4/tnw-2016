@@ -7,8 +7,7 @@ var mouth = (function () {
 
   module.create = function (audioElement, target, options) {
 
-    //TODO for options: width, barPadding
-
+    module.svg = null;
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     // var audioElement = document.getElementById(audioElement);
     audioSrc = audioCtx.createMediaElementSource(audioElement);
@@ -22,19 +21,23 @@ var mouth = (function () {
     //var frequencyData = new Uint8Array(analyser.frequencyBinCount);
     var frequencyData = new Uint8Array(options.frequencyBins);
 
+    // local ref of options
     var svgHeight = options.height;
     var svgWidth = options.width;
     var barPadding = options.barPadding;
+
+    // set fillColor to module for later changes
+    module.fillColor = options.fillColor;
 
     function createSvg(parent, height, width) {
       return d3.select(parent).append('svg').attr('height', height).attr('width', width);
     }
 
-    var svg = createSvg(target, svgHeight, svgWidth)
+    module.svg = createSvg(target, svgHeight, svgWidth)
       // svg.attr('transform', 'translate(200,20)');
 
     // Create our initial D3 chart.
-    svg.selectAll('rect')
+    module.svg.selectAll('rect')
        .data(frequencyData)
        .enter()
        .append('rect')
@@ -50,14 +53,14 @@ var mouth = (function () {
        .attr('width', svgWidth / frequencyData.length - barPadding);
 
     // Continuously loop and update chart with frequency data.
-    function renderChart() {
-       requestAnimationFrame(renderChart);
+    module.renderChart = function () {
+       requestAnimationFrame(module.renderChart);
 
        // Copy frequency data to frequencyData array.
        analyser.getByteFrequencyData(frequencyData);
        
        // Update d3 chart with new data.
-       svg.selectAll('rect')
+       module.svg.selectAll('rect')
           .data(frequencyData)
           .attr('y', function(d) {
              return d / 10
@@ -67,29 +70,23 @@ var mouth = (function () {
           })
           .attr('fill', function(d) {
              // return 'rgb(0, 0, ' + d + ')';
-             return options.fillColor;
+             return module.fillColor;
           });
     }
-
-    // Run the loop
-    renderChart();
-  }
-
-  module.get = function () {
   }
 
   module.start = function () {
-    
+    module.renderChart();    
   }
   
   module.update = function () {
     audioElement.load();
   }
-  
-  // module.stop = function (params) {
-  //   if (audioSrc) audioSrc.disconnect();
-  // }
-  
+
+  module.setFillColor = function (newFillColor) {
+    module.fillColor = newFillColor;
+  } 
+
   return module;
 
 }());
