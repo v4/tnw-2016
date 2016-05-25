@@ -17,11 +17,13 @@ class SAM extends EventEmitter {
     this.sessionId = uuid.v1();
     this.context = {};
     this.steps = 5;
+    this.idle = true;
   }
   
   say(sessionId, context, message, cb) {
     console.log('sam say:' , message, context);
     this.emit('speech out', message);
+    this.idle = true;
     cb();
   }
 
@@ -35,19 +37,23 @@ class SAM extends EventEmitter {
   }
 
   process(message) {
-    this.wit.runActions(
-      this.sessionId,
-      message,
-      this.context,
-      (error, context, text) => {
-        if (error) {
-          // l.error(error);
-        } else {
-          this.context = context;
-        }
-      },
-      this.steps
-    );
+    // if (this.idle) {
+      this.idle = false;
+      this.wit.runActions(
+        this.sessionId,
+        message,
+        this.context,
+        (error, context, text) => {
+          if (error) {
+            // l.error(error);
+          } else {
+            this.context = context;
+          }
+          this.idle = true;
+        },
+        this.steps
+      );
+    // }
   }
 
 }
