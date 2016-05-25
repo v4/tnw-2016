@@ -2,8 +2,11 @@ var recognition = new webkitSpeechRecognition();
 var socket = io('http://localhost:3000');
 socket.on('speech out', (data) => {
   console.log('speech out', data.payload);
+  var audio = new Audio('data:audio/ogg;base64,' + data.payload);
+  audio.play();
   recognition.start();
 });
+
 
 recognition.continuous = true;
 recognition.interimResults = true;
