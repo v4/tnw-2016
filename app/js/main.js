@@ -97,7 +97,9 @@ $(document).ready(function () {
     face.speechBubbleDeeze(deezerIframe);
   }
 
-
+  var stopBot = function() {
+    personalise.upInSmoke();
+  }
 
   socket.on('speech out', (message) => {
 
@@ -114,6 +116,35 @@ $(document).ready(function () {
   socket.on('play song', (message) => {
     console.log('play song', message);
     mockDeezer();
+  });
+
+
+  socket.on('reset bot', (message) => {
+    console.log('reset bot', message);
+    stopBot();
+  });
+
+
+  /* PERSONALISING SERVICES / APIS */
+
+  socket.on('personalise deezer', (message) => {
+    console.log('personalising deezer:', message);
+    personalise.select('deezer');
+  });
+
+  socket.on('personalise uber', (message) => {
+    console.log('personalising uber:', message);
+    personalise.select('uber');
+  });
+
+  socket.on('personalise todoist', (message) => {
+    console.log('personalising todoist:', message);
+    personalise.select('todoist');
+  });
+
+  socket.on('personalise toon', (message) => {
+    console.log('personalising toon:', message);
+    personalise.select('toon');
   });
   
   // face.makeAngry();
