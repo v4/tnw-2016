@@ -12,11 +12,16 @@ var personalise = (function () {
 
   module.select = function (personalisation) {
     module.removeAllPersonalisations();
+    // apply personalisation
     apis.forEach(function(api) {
       if(api === personalisation) {
         $('.' + api).removeClass('invisible');
       }
     });
+    // apply personalisation also to brows, eyes, etc.
+    $('.face-brows').addClass(personalisation);
+    $('.face-eyes').addClass(personalisation);
+    $('.bg-color').addClass(personalisation);
   };
 
   return module;

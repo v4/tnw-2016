@@ -93,9 +93,28 @@ $(document).ready(function () {
   // debug
   // face.makeHappy();
   // socket.emit('speech in', { payload: 'hello' });
-  
+
   setTimeout(function() {
     personalise.select('deezer');
-  }, 1000);
+  }, 500)
+
+  // setTimeout(function() {
+  //   personalise.select('deezer');
+
+  //   setTimeout(function() {
+  //     personalise.select('toon');
+
+  //     setTimeout(function() {
+  //       personalise.select('uber');
+
+  //       setTimeout(function() {
+  //         personalise.select('todoist');
+  //       }, 2500);
+
+  //     }, 2500);
+
+  //   }, 2500);
+
+  // }, 1000);
 
 });

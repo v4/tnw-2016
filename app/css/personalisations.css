@@ -2,13 +2,14 @@
 .personalisation-colors {
   width: 400px;
   height: 100px;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 .container {
   width: 400px;
   height: 100%;
   position: absolute;
+  transition: all 1s;
 }
 
 .deezer {
@@ -21,6 +22,7 @@
   margin: 0;
   padding: 0;
   float: left;
+  transition: all 1s;
 }
 
 .deezer-color-1 {
@@ -45,6 +47,16 @@
   background: #50d7ff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.deezer .brow-left {
+  background: #ffe00a;
+  transition: all 1s;
+}
+
+.deezer .brow-right {
+  background: #bfed7e;
+  transition: all 1s;
 }
 
 .uber {
@@ -84,4 +96,5 @@
   border-radius: 5px;
   background: #ff924c;
   color: #d96e22;
+  position: absolute;
 }
