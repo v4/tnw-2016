@@ -102,33 +102,16 @@ $(document).ready(function () {
 
   socket.on('speech out', (message) => {
     console.log('speech out', message);
+    /* PERSONALISING SERVICES / APIS */
+    if(message.search('deezer') !== -1) personalise.select('deezer');
+    if(message.search('uber') !== -1) personalise.select('uber');
+    if(message.search('todoist') !== -1) personalise.select('todoist');
+    if(message.search('toon') !== -1) personalise.select('toon');
   });
 
   socket.on('play song', (message) => {
     console.log('play song', message);
     mockDeezer();
-  });
-
-  /* PERSONALISING SERVICES / APIS */
-
-  socket.on('personalise deezer', (message) => {
-    console.log('personalising deezer:', message);
-    personalise.select('deezer');
-  });
-
-  socket.on('personalise uber', (message) => {
-    console.log('personalising uber:', message);
-    personalise.select('uber');
-  });
-
-  socket.on('personalise todoist', (message) => {
-    console.log('personalising todoist:', message);
-    personalise.select('todoist');
-  });
-
-  socket.on('personalise toon', (message) => {
-    console.log('personalising toon:', message);
-    personalise.select('toon');
   });
   
   // face.makeAngry();
