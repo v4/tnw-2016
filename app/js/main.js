@@ -118,21 +118,29 @@ $(document).ready(function () {
 
   
   // MICHAEL TESTS DIVIDING LINE. CROSS THIS AND I WILL CHECKOUT --MINE !
+  
+  var testingIntervalID = null;
+  
+  var cancelTesting = function() {
+    clearInterval(testingIntervalID);
+  };
 
-  setTimeout(function() {
-    personalise.select('deezer');
-    setTimeout(function() {
-      personalise.depersonalise();
-      setTimeout(function() {
-        personalise.select('toon');
-        setTimeout(function() {
-          personalise.select('todoist');
-          setTimeout(function() {
-            personalise.upInSmoke();
-          }, 1000);
-        }, 1000);
-      }, 1000);
-    }, 1000);
+  var testList = [
+    function() { personalise.select('deezer'); },
+    function() { personalise.depersonalise(); },
+    function() { personalise.select('toon'); },
+    function() { personalise.select('todoist'); },
+    function() { face.makeAngry(); },
+    function() { face.makeSad(); },
+    function() { personalise.upInSmoke(); },
+    function() { cancelTesting(); }
+  ];
+
+  // step through test list and EXECUTE
+  var testingIntervalID = setInterval(function() {
+    var func = testList.shift();
+    console.log('executing function: ', func);
+    func.call();
   }, 1000);
   
 
