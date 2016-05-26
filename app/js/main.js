@@ -77,10 +77,10 @@ $(document).ready(function () {
     console.log(event);
     if(event.results[0].isFinal) {
       console.log(event.results[0][0].transcript);
-      if (event.results[0][0].transcript.toLowerCase().indexOf('sam') !== -1) {
+      // if (event.results[0][0].transcript.toLowerCase().indexOf('sam') !== -1) {
         console.log('speech in', event.results[0][0].transcript);
         socket.emit('speech in', { payload: event.results[0][0].transcript });        
-      }
+      // }
       // recognition.stop();
     }
   };
