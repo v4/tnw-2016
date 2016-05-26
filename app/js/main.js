@@ -31,10 +31,7 @@ $(document).ready(function () {
   var audio = null;
   var speechQueue = [];
   var idle = true;
-  socket.on('speech out', (data) => {
-    // speechQueue.push(data);
-    processSpeechout(data);
-  });
+
   
   function processSpeechout(data) {
     // if (idle) {
@@ -100,13 +97,18 @@ $(document).ready(function () {
     face.speechBubbleDeeze(deezerIframe);
   }
 
+
+
   socket.on('speech out', (message) => {
+
+    processSpeechout(message);
+
     console.log('speech out', message);
     /* PERSONALISING SERVICES / APIS */
-    if(message.search('deezer') !== -1) personalise.select('deezer');
-    if(message.search('uber') !== -1) personalise.select('uber');
-    if(message.search('todoist') !== -1) personalise.select('todoist');
-    if(message.search('toon') !== -1) personalise.select('toon');
+    if(message.text.search('Deezer') !== -1) personalise.select('deezer');
+    if(message.text.search('Uber') !== -1) personalise.select('uber');
+    if(message.text.search('toodoo-ist') !== -1) personalise.select('todoist');
+    if(message.text.search('toon') !== -1) personalise.select('toon');
   });
 
   socket.on('play song', (message) => {

@@ -53,6 +53,7 @@ io.on('connection', (socket) => {
     });
     transcript.on('end', () => {
       socket.emit('speech out', {
+        text: message,
         payload: Buffer.concat(audio).toString('base64')
       });
     });

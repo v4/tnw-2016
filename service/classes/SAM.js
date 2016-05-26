@@ -28,7 +28,7 @@ class SAM extends EventEmitter {
     this.LoadPlugins(DIR);
     
     this.on('speech in', this.process.bind(this));
-    this.wit = new Wit('E6AWMDVXHBRMM2TOIX3M53GNREPBFS7A', this.actions);
+    this.wit = new Wit('WDGSWRLGQLXOM5WIHIPYYDTQ3EYFMK5G', this.actions);
     this.sessionId = uuid.v1();
     this.context = {};
     this.steps = 5;
