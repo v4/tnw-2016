@@ -1,0 +1,100 @@
+
+.personalisation-colors {
+  width: 400px;
+  height: 100px;
+  transition: all 1s;
+}
+
+.container {
+  width: 400px;
+  height: 100%;
+  position: absolute;
+  transition: all 1s;
+}
+
+.deezer {
+  
+}
+
+.deezer-color {
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+  transition: all 1s;
+}
+
+.deezer-color-1 {
+  background: #ff2b2e;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.deezer-color-2 {
+  background: #ffe00a;
+}
+
+.deezer-color-3 {
+  background: #ff63b8;
+}
+
+.deezer-color-4 {
+  background: #bfed7e;
+}
+
+.deezer-color-5 {
+  background: #50d7ff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.deezer .brow-left {
+  background: #ffe00a;
+  transition: all 1s;
+}
+
+.deezer .brow-right {
+  background: #bfed7e;
+  transition: all 1s;
+}
+
+.uber {
+  
+}
+
+.uber-color {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: #000000;
+}
+
+.uber-text {
+  color: #FFFFFF;
+}
+
+.todoist {
+  
+}
+
+.todoist-color {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: #ff4e40;
+  color: #e01e10;
+}
+
+.toon {
+  
+}
+
+.toon-color {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: #ff924c;
+  color: #d96e22;
+  position: absolute;
+}

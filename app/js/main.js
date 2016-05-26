@@ -94,29 +94,49 @@ $(document).ready(function () {
   // face.makeAngry();
   face.makeNeutral();
 
-  // face.setVocalExpression('a');
-  
-  // var mouthOptions = {
-  //   frequencyBins : 20,
-  //   barPadding: 2,
-  //   height: '20',
-  //   width: '75',
-  //   fillColor: '#3541db'
-  // };
-
   // speech bubble
   setTimeout(function() {
     // face.speechBubble('lalala', 'description');
-    face.speechBubbleImage('img/loader-nyan.gif');
+    // face.speechBubbleImage('img/loader-nyan.gif');
     face.speechBubbleLoading();
   }, 1000);
 
+
+  //socket.emit('speech in', { payload: 'What is the answer to the ultimate question of life, the universe, and everything?' });
+  // socket.emit('speech in', { payload: 'What is the date?' });
+  // socket.emit('speech in', { payload: 'What is the time?' });
+  // socket.emit('speech in', { payload: 'I feel sad' });
+  //socket.emit('speech in', { payload: 'tell me a joke' });
+
   // setTimeout(function() {
   //   face.speechBubbleImage('img/loader-nyan.gif');
-  // }, 1000);
+  // }, 10000);
 
   // debug
   // face.makeHappy();
   // socket.emit('speech in', { payload: 'hello' });
+
+  setTimeout(function() {
+    personalise.select('deezer');
+  }, 500)
+
+  // setTimeout(function() {
+  //   personalise.select('deezer');
+
+  //   setTimeout(function() {
+  //     personalise.select('toon');
+
+  //     setTimeout(function() {
+  //       personalise.select('uber');
+
+  //       setTimeout(function() {
+  //         personalise.select('todoist');
+  //       }, 2500);
+
+  //     }, 2500);
+
+  //   }, 2500);
+
+  // }, 1000);
 
 });
