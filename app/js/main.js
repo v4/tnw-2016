@@ -84,13 +84,14 @@ $(document).ready(function () {
 
   // speech bubble
   setTimeout(function() {
-    face.speechBubble('lalala', 'description');
-    // content
+    // face.speechBubble('lalala', 'description');
+    face.speechBubbleImage('img/loader-nyan.gif');
+    face.speechBubbleLoading();
   }, 1000);
 
-  setTimeout(function() {
-    face.speechBubbleImage('loadingIcon.png');
-  }, 6000);
+  // setTimeout(function() {
+  //   face.speechBubbleImage('img/loader-nyan.gif');
+  // }, 1000);
 
   // debug
   // face.makeHappy();

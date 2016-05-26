@@ -154,7 +154,7 @@
 }
 
 .face-holder-left {
-  margin-left: 5%;
+  margin-left: calc(50% - 440px);
   margin-top: 15%;
   transition: all 1.75s;
 }
@@ -366,14 +366,47 @@
 .speechbubble {
   position: absolute;
   width: 300px;
-  height: 150px;
+  height: 160px;
   transition: all 0.2s ease-in-out;
   transform: scale(0.4, 0.4);
   transform-origin: 5% 50%;
+}
+
+.speechbubble  > .talkbubble {
+  padding: 5px;
+}
+
+.speechbubble  > .talkbubble > .content {
+  margin: 5px;
+  text-align: center;
+}
+
+.speechbubble > .talkbubble > .content p {
+  opacity: 0;
+  padding: 5px;
+  margin: 0;
+  transform: scale(0.4, 0.4);
+  transition: all 0.5s ease-in-out;
+  color: #FFF;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.speechbubble > .talkbubble > .content p.title {
+  font-size: 20px;
+}
+
+.speechbubble > .talkbubble > .content p.description {
+ font-size: 14px; 
+}
+
+.speechbubble > .talkbubble > .content .popin {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: all 0.5s ease-in-out;
 }
 
 .popin {
   transform: scale(1, 1);
   transform-origin: 10% 50%;
 }
-
