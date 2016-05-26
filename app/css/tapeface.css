@@ -144,19 +144,19 @@
   -o-animation:      FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* Opera 12+ */
   animation:         FACE-ANIM-HOVER-LEFT-RIGHT 7s infinite; /* IE 10+, Fx 29+ */
   // background: rgba(255, 255, 255, 0.15);
-  transition: all 1.75s;
+  transition: all 0.75s;
 }
 
 .face-holder-centered {
   margin-left: calc(50% - 200px);
   margin-top: 15%;
-  transition: all 1.75s;
+  transition: all 0.75s;
 }
 
 .face-holder-left {
   margin-left: calc(50% - 440px);
   margin-top: 15%;
-  transition: all 1.75s;
+  transition: all 0.75s;
 }
 
 .face {

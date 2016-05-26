@@ -85,8 +85,20 @@ $(document).ready(function () {
     }
   };
 
-  socket.on('speech out', (message) =>{
+  var mockDeezer = function() {
+    console.log('called !!!');
+    var deezerTrackID = '3135556';
+    var deezerIframe = '<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=220&height=220&color=478cc7&layout=dark&size=medium&type=tracks&id=' + deezerTrackID + '&app_id=1" width="220" height="220"></iframe>'
+    face.speechBubbleDeeze(deezerIframe);
+  }
+
+  socket.on('speech out', (message) => {
     console.log('speech out', message);
+  });
+
+  socket.on('on play song', (message) => {
+    console.log('on play song', message);
+    mockDeezer();
   });
   
   recognition.start();
@@ -118,17 +130,26 @@ $(document).ready(function () {
   };
 
   var testList = [
-    function() { personalise.select('deezer'); },
-    function() { personalise.depersonalise(); },
-    function() { personalise.select('toon'); },
-    function() { personalise.select('todoist'); },
-    function() { face.makeAngry(); },
-    function() { face.makeSad(); },
-    function() { face.makeNeutral(); },
-    function() { face.makeHappy(); },
-    function() { face.speechBubble('lalala', 'description'); },
-    function() { face.speechBubbleImage('img/loader-nyan.gif'); },
-    function() { face.speechBubbleLoading(); },
+    // function() { personalise.select('deezer'); },
+    // function() { personalise.depersonalise(); },
+    // function() { personalise.select('toon'); },
+    // function() { personalise.select('todoist'); },
+    // function() { face.makeAngry(); },
+    // function() { face.makeSad(); },
+    // function() { face.makeNeutral(); },
+    // function() { face.makeHappy(); },
+    // function() { face.speechBubble('lalala', 'description'); },
+    // function() { face.speechBubbleImage('img/loader-nyan.gif'); },
+    // function() { face.speechBubbleLoading(); },
+    function() { 
+      setTimeout(function() {
+        personalise.select('deezer');
+      }, 2000);
+      setTimeout(function() {
+        face.makeHappy();
+      }, 4500); 
+      mockDeezer(); 
+    },
     function() { personalise.upInSmoke(); },
     function() { cancelTesting(); }
   ];
@@ -138,6 +159,11 @@ $(document).ready(function () {
     var func = testList.shift();
     console.log(func);
     func.call();
-  }, 1500);
+  }, 20000);
+
+  // BUT execute the first function straight away
+  var func = testList.shift();
+  console.log(func);
+  func.call();
 
 });

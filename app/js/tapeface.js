@@ -82,8 +82,8 @@ var face = (function () { // eslint-disable-line
         $('.speechbubble').addClass('popin');
         setTimeout(function() {
           resolve('resolved!');
-        }, 500)
-      }, 2000);
+        }, 750)
+      }, 750);
     });
   }
 
@@ -101,9 +101,9 @@ var face = (function () { // eslint-disable-line
 
         setTimeout(function() {
           resolve('resolved!');
-        }, 3000);
+        }, 750);
 
-      }, 1750);
+      }, 750);
 
     });
   };
@@ -142,6 +142,16 @@ var face = (function () { // eslint-disable-line
 
   module.speechBubbleLoading = function(imageUrl) {
     return face.speechBubbleImage('img/loader-bars-grey.gif');
+  };
+
+  module.speechBubbleDeeze = function(deezerIframeString) {
+    module.showSpeechBubble()
+    .then(function() {
+      $('.speechbubble .content').html(deezerIframeString);
+      // setTimeout(function() {
+      //   return;
+      // }, 1000);
+    })
   };
 
   // go fullscreen
