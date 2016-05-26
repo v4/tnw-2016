@@ -12,7 +12,7 @@ class JustMakingConversation extends Plugin {
   }
 
   getActions(){
-    return ['getPositiveMood','getDateAndOrTime', 'getJoke'];
+    return ['getPositiveMood','getDateAndOrTime', 'getJoke', 'resetBot'];
   }
 
   getPositiveMood(sessionId, context, callback){
@@ -85,6 +85,10 @@ class JustMakingConversation extends Plugin {
     });
   }
 
+  resetBot(sessionId, context, callback) {
+    this.emit('reset bot', {});
+    callback(context);
+  }
 
 }
 
