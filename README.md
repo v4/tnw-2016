@@ -1,4 +1,5 @@
 # Sam.js
+## My name is Tape-face and i care what you say!
 * Sam gives a face (and thus a voice) to your API !
 * Sam understands and works with the service format you wrote for your API.
 * Sam is also called 'tapeFace'
