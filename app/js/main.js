@@ -116,8 +116,17 @@ $(document).ready(function () {
   // face.makeHappy();
   // socket.emit('speech in', { payload: 'hello' });
 
+  
+  // MICHAEL TESTS DIVIDING LINE. CROSS THIS AND I WILL CHECKOUT --MINE !
+
   setTimeout(function() {
     personalise.select('deezer');
+
+    setTimeout(function() {
+      // personalise.upInSmoke();
+      personalise.depersonalise();
+    }, 2500)
+
   }, 500)
 
   // setTimeout(function() {
@@ -138,5 +147,6 @@ $(document).ready(function () {
   //   }, 2500);
 
   // }, 1000);
-
+  
+  
 });

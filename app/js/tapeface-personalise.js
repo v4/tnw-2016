@@ -31,6 +31,14 @@ var personalise = (function () {
     $('.speechbubble').addClass(personalisation);
   };
 
+  module.upInSmoke = function () {
+    module.removeAllPersonalisations();
+  };
+
+  module.depersonalise = function () {
+    // module.removeAllPersonalisations();
+  };
+
   return module;
 
 })();
