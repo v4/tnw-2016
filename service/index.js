@@ -29,7 +29,11 @@ io.on('connection', (socket) => {
   sam.on('play song', () => {
     socket.emit('play song', {});
   });
-  
+
+  sam.on('reset bot', () => {
+    socket.emit('reset bot', {});
+  });
+
   sam.on('speech out', (message) => {
     console.log('SAM: speech out: ', message);
     var transcript = textToSpeech.synthesize({
