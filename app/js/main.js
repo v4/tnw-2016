@@ -188,6 +188,6 @@ $(document).ready(function () {
 
   /* ==================== TESTING ==================== */
 
-  testStuff();
+  // testStuff();
 
 });
