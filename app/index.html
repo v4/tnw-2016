@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/tapeface.css">
     <link rel="stylesheet" type="text/css" href="css/shapes.css">
+    <link rel="stylesheet" type="text/css" href="css/personalisations.css">
 
     <!-- meta -->
     <meta name="description" content="">
@@ -20,12 +21,14 @@
     <script src="js/vendor/socket-io.js"></script>
     <script src="js/vendor/d3.min.js"></script>
     <script src="js/vendor/q.js"></script>
+    <!-- <script src="js/vendor/screenfull.js"></script> -->
 
 </head>
 <body class="bg-color">
   
     <!-- custom script stuff -->
     <script src="js/tapeface-mouth.js"></script>
+    <script src="js/tapeface-personalise.js"></script>
     <script src="js/tapeface.js"></script>
     <script src="js/main.js"></script>
     
@@ -38,6 +41,35 @@
         <div class="face">
           
           <div class="face-head">
+
+            <!-- PERSONALISATION STUFF -->
+
+            <div class="personalisation-colors">
+              
+              <div class="deezer container invisible">
+                <div class="deezer-color deezer-color-1"></div>
+                <div class="deezer-color deezer-color-2"></div>
+                <div class="deezer-color deezer-color-3"></div>
+                <div class="deezer-color deezer-color-4"></div>
+                <div class="deezer-color deezer-color-5"></div>
+              </div>
+
+              <div class="uber container invisible">
+                <div class="uber-color"></div>
+                <div class="uber-text">UBER</div>
+              </div>
+
+              <div class="toon container invisible">
+                <div class="toon-color"></div>
+                <div class="toon-text">TOON API</div>
+              </div>
+
+              <div class="todoist container invisible">
+                <div class="todoist-color"></div>
+                <div class="todoist-logo"></div>
+              </div>
+
+            </div>
             
             <!-- EYES  -->
             <div class="face-eyes face-happy">
