@@ -140,5 +140,9 @@ var face = (function () { // eslint-disable-line
     });
   };
 
+  module.speechBubbleLoading = function(imageUrl) {
+    return face.speechBubbleImage('img/loader-bars-grey.gif');
+  };
+
   return module;
 }());

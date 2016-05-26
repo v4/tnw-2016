@@ -86,7 +86,7 @@ $(document).ready(function () {
   setTimeout(function() {
     // face.speechBubble('lalala', 'description');
     face.speechBubbleImage('img/loader-nyan.gif');
-    face.speechBubbleImage('img/loader-slashlike-bars.gif');
+    face.speechBubbleLoading();
   }, 1000);
 
   // setTimeout(function() {
