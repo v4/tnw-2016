@@ -148,23 +148,9 @@ var face = (function () { // eslint-disable-line
     module.showSpeechBubble()
     .then(function() {
       $('.speechbubble .content').html(deezerIframeString);
-      // setTimeout(function() {
-      //   return;
-      // }, 1000);
+      return;
     })
   };
-
-  // go fullscreen
-  module.click = function() {
-    console.log('test');
-    // if (screenfull.enabled) {
-    //   screenfull.request();
-    // }
-  };
-
-  $('.face').click(module.click);
-  $('.face-head').click(module.click);
-  $('.face-holder').click(module.click);
 
   return module;
 }());

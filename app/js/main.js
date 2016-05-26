@@ -108,6 +108,28 @@ $(document).ready(function () {
     console.log('play song', message);
     mockDeezer();
   });
+
+  /* PERSONALISING SERVICES / APIS */
+
+  socket.on('personalise deezer', (message) => {
+    console.log('personalising deezer:', message);
+    personalise.select('deezer');
+  });
+
+  socket.on('personalise uber', (message) => {
+    console.log('personalising uber:', message);
+    personalise.select('uber');
+  });
+
+  socket.on('personalise todoist', (message) => {
+    console.log('personalising todoist:', message);
+    personalise.select('todoist');
+  });
+
+  socket.on('personalise toon', (message) => {
+    console.log('personalising toon:', message);
+    personalise.select('toon');
+  });
   
   // face.makeAngry();
   face.makeNeutral();
@@ -149,27 +171,32 @@ $(document).ready(function () {
     // function() { face.speechBubbleLoading(); },
     function() { 
       setTimeout(function() {
-        personalise.select('deezer');
+        personalise.select('uber');
       }, 2000);
       setTimeout(function() {
         face.makeHappy();
       }, 4500); 
       // mockDeezer(); 
     },
-    function() { personalise.upInSmoke(); },
+    // function() { personalise.upInSmoke(); },
     function() { cancelTesting(); }
   ];
 
-  // // step through test list and EXECUTE
-  // var testingIntervalID = setInterval(function() {
-  //   var func = testList.shift();
-  //   console.log(func);
-  //   func.call();
-  // }, 20000);
+  var testStuff = function() {
+    var testingIntervalID = setInterval(function() {
+      var func = testList.shift();
+      console.log(func);
+      func.call();
+    }, 20000);
 
-  // // BUT execute the first function straight away
-  // var func = testList.shift();
-  // console.log(func);
-  // func.call();
+    // BUT execute the first function straight away
+    var func = testList.shift();
+    console.log(func);
+    func.call();
+  };
+
+  /* ==================== TESTING ==================== */
+
+  testStuff();
 
 });
