@@ -82,7 +82,7 @@ $(document).ready(function () {
         console.log('speech in', event.results[0][0].transcript);
         socket.emit('speech in', { payload: event.results[0][0].transcript });        
       // }
-      // recognition.stop();
+      recognition.stop();
     }
     
     // if (event.results[0][0].confidence > .8) {
