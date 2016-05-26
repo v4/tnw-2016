@@ -94,14 +94,6 @@ $(document).ready(function () {
   // face.makeAngry();
   face.makeNeutral();
 
-  // speech bubble
-  setTimeout(function() {
-    // face.speechBubble('lalala', 'description');
-    // face.speechBubbleImage('img/loader-nyan.gif');
-    face.speechBubbleLoading();
-  }, 1000);
-
-
   //socket.emit('speech in', { payload: 'What is the answer to the ultimate question of life, the universe, and everything?' });
   // socket.emit('speech in', { payload: 'What is the date?' });
   // socket.emit('speech in', { payload: 'What is the time?' });
@@ -120,7 +112,7 @@ $(document).ready(function () {
   // MICHAEL TESTS DIVIDING LINE. CROSS THIS AND I WILL CHECKOUT --MINE !
   
   var testingIntervalID = null;
-  
+
   var cancelTesting = function() {
     clearInterval(testingIntervalID);
   };
@@ -132,6 +124,11 @@ $(document).ready(function () {
     function() { personalise.select('todoist'); },
     function() { face.makeAngry(); },
     function() { face.makeSad(); },
+    function() { face.makeNeutral(); },
+    function() { face.makeHappy(); },
+    function() { face.speechBubble('lalala', 'description'); },
+    function() { face.speechBubbleImage('img/loader-nyan.gif'); },
+    function() { face.speechBubbleLoading(); },
     function() { personalise.upInSmoke(); },
     function() { cancelTesting(); }
   ];
@@ -139,9 +136,8 @@ $(document).ready(function () {
   // step through test list and EXECUTE
   var testingIntervalID = setInterval(function() {
     var func = testList.shift();
-    console.log('executing function: ', func);
+    console.log(func);
     func.call();
-  }, 1000);
-  
+  }, 1500);
 
 });
