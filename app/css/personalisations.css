@@ -53,7 +53,7 @@
   border-bottom-right-radius: 5px;
 }
 
-/* DEEZER BROW FIX */
+/* DEEZER BROW CHANGES */
 
 .brows-deezer .brow-left {
   background: #ffe00a;
@@ -91,10 +91,69 @@
   height: 100%;
   border-radius: 5px;
   background: #000000;
+  position: absolute;
 }
 
 .uber-text {
   color: #FFFFFF;
+  /* font-size: 26px; */
+  /* font-weight: bold; */
+  /* font-family: sans-serif; */
+  /* padding: 5px; */
+  /* margin-left: calc(50% - 45px); */
+  /* margin-top: 15px; */
+  position: absolute;
+  display: block;
+  background: url('../img/uber.jpg') center no-repeat;
+  width: 350px;
+  height: 150px;
+  transform: scale(0.3, 0.3);
+  top: -40px;
+  left: 22px;
+}
+
+.uber-wheel {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: #000;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-radius: 8px;
+}
+
+.uber-wheel-left {
+  top: 90px;
+  left: 70px;
+}
+
+.uber-wheel-right {
+  top: 90px;
+  left: 278px;
+}
+
+/* UBER BROW CHANGES */
+
+.brows-uber .brow-left {
+  left: calc(150px - 88px - 30px);
+  transition: all 1s;
+}
+
+.brows-uber .brow-right {
+  left: calc(250px + 42px);
+  transition: all 1s;
+}
+
+/* UBER EYE CHANGES */
+
+.eyes-uber .eye-left {
+  left: calc(150px - 30px - 50px);
+  transition: all 1s;
+}
+
+.eyes-uber .eye-right {
+  left: calc(250px + 35px + 50px);
+  transition: all 1s;
 }
 
 /* ================= TODOIST ================== */
@@ -113,7 +172,7 @@
   color: #e01e10;
 }
 
-/* TODOIST BROW FIX */
+/* TODOIST BROW CHANGES */
 
 .brows-todoist .brow-left {
   background: #ff4e40;
@@ -155,7 +214,7 @@
   position: absolute;
 }
 
-/* TOON BROW FIX */
+/* TOON BROW CHANGES */
 
 .brows-toon .brow-left {
   background: #ff924c;

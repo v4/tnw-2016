@@ -172,7 +172,7 @@ $(document).ready(function () {
       }, 4500); 
       // mockDeezer(); 
     },
-    function() { personalise.upInSmoke(); },
+    // function() { personalise.upInSmoke(); },
     function() { cancelTesting(); }
   ];
 
@@ -195,6 +195,6 @@ $(document).ready(function () {
   /* ==================== TESTING ==================== */
   /* ==================== TESTING ==================== */
 
-  // testStuff();
+  testStuff();
 
 });
