@@ -8,10 +8,10 @@ var personalise = (function () {
     apis.forEach(function(api) {
       $('.' + api).addClass('invisible');
       // remove personalisation from brows, eyes, etc.
-      $('.face-brows').removeClass(api);
-      $('.face-eyes').removeClass(api);
-      $('.bg-color').removeClass(api);
-      $('.speechbubble').removeClass(api);
+      $('.face-brows').removeClass('brows-' + api);
+      $('.face-eyes').removeClass('eyes-' + api);
+      $('.bg-color').removeClass('bg-color-' + api);
+      $('.speechbubble').removeClass('speechbubble-' + api);
     });
   };
 
@@ -25,10 +25,21 @@ var personalise = (function () {
     });
 
     // apply personalisation also to brows, eyes, etc.
-    $('.face-brows').addClass(personalisation);
-    $('.face-eyes').addClass(personalisation);
-    $('.bg-color').addClass(personalisation);
-    $('.speechbubble').addClass(personalisation);
+    $('.face-brows').addClass('brows-' + personalisation);
+    $('.face-eyes').addClass('eyes-' + personalisation);
+    $('.bg-color').addClass('bg-color-' + personalisation);
+    $('.speechbubble').addClass('speechbubble-' + personalisation);
+  };
+
+  module.upInSmoke = function () {
+    module.removeAllPersonalisations();
+    $('.face').addClass('invisible');
+    $('.speechbubble').addClass('invisible');
+    $('.face-shadow').addClass('invisible');
+  };
+
+  module.depersonalise = function () {
+    module.removeAllPersonalisations();
   };
 
   return module;

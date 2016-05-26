@@ -12,6 +12,10 @@
   transition: all 1s;
 }
 
+/* ================= DEEZER ================== */
+/* ================= DEEZER ================== */
+/* ================= DEEZER ================== */
+
 .deezer {
   
 }
@@ -51,28 +55,32 @@
 
 /* DEEZER BROW FIX */
 
-.deezer .brow-left {
+.brows-deezer .brow-left {
   background: #ffe00a;
   transition: all 1s;
 }
 
-.deezer .brow-right {
+.brows-deezer .brow-right {
   background: #bfed7e;
   transition: all 1s;
 }
 
 /* DEEZER SPEECHBUBBLE */
 
-.deezer .talkbubble {
+.speechbubble-deezer .talkbubble {
   background: #ff63b8;
   opacity: 0.45;
 }
 
-.deezer .talkbubble:before {
+.speechbubble-deezer .talkbubble:before {
   border-top: 13px solid transparent;
   border-right: 26px solid #ff63b8;
   border-bottom: 13px solid transparent;
 }
+
+/* ================= UBER ================== */
+/* ================= UBER ================== */
+/* ================= UBER ================== */
 
 .uber {
   
@@ -89,6 +97,10 @@
   color: #FFFFFF;
 }
 
+/* ================= TODOIST ================== */
+/* ================= TODOIST ================== */
+/* ================= TODOIST ================== */
+
 .todoist {
   
 }
@@ -103,28 +115,32 @@
 
 /* TODOIST BROW FIX */
 
-.todoist .brow-left {
+.brows-todoist .brow-left {
   background: #ff4e40;
   transition: all 1s;
 }
 
-.todoist .brow-right {
+.brows-todoist .brow-right {
   background: #ff4e40;
   transition: all 1s;
 }
 
 /* TODOIST SPEECHBUBBLE */
 
-.todoist .talkbubble {
+.speechbubble-todoist .talkbubble {
   background: #ff4e40;
   opacity: 0.45;
 }
 
-.todoist .talkbubble:before {
+.speechbubble-todoist .talkbubble:before {
   border-top: 13px solid transparent;
   border-right: 26px solid #ff4e40;
   border-bottom: 13px solid transparent;
 }
+
+/* ================= TOON ================== */
+/* ================= TOON ================== */
+/* ================= TOON ================== */
 
 .toon {
   
@@ -137,4 +153,23 @@
   background: #ff924c;
   color: #d96e22;
   position: absolute;
+}
+
+/* TOON BROW FIX */
+
+.brows-toon .brow-left {
+  background: #ff924c;
+  transition: all 1s;
+}
+
+.brows-toon .brow-right {
+  background: #ff924c;
+  transition: all 1s;
+}
+
+/* TOON SPEECHBUBBLE */
+
+.speechbubble-toon .talkbubble {
+  background: #ff924c;
+  opacity: 0.45;
 }

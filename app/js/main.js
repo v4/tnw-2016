@@ -94,14 +94,6 @@ $(document).ready(function () {
   // face.makeAngry();
   face.makeNeutral();
 
-  // speech bubble
-  setTimeout(function() {
-    // face.speechBubble('lalala', 'description');
-    // face.speechBubbleImage('img/loader-nyan.gif');
-    face.speechBubbleLoading();
-  }, 1000);
-
-
   //socket.emit('speech in', { payload: 'What is the answer to the ultimate question of life, the universe, and everything?' });
   // socket.emit('speech in', { payload: 'What is the date?' });
   // socket.emit('speech in', { payload: 'What is the time?' });
@@ -116,27 +108,36 @@ $(document).ready(function () {
   // face.makeHappy();
   // socket.emit('speech in', { payload: 'hello' });
 
-  setTimeout(function() {
-    personalise.select('deezer');
-  }, 500)
+  
+  // MICHAEL TESTS DIVIDING LINE. CROSS THIS AND I WILL CHECKOUT --MINE !
+  
+  var testingIntervalID = null;
 
-  // setTimeout(function() {
-  //   personalise.select('deezer');
+  var cancelTesting = function() {
+    clearInterval(testingIntervalID);
+  };
 
-  //   setTimeout(function() {
-  //     personalise.select('toon');
+  var testList = [
+    function() { personalise.select('deezer'); },
+    function() { personalise.depersonalise(); },
+    function() { personalise.select('toon'); },
+    function() { personalise.select('todoist'); },
+    function() { face.makeAngry(); },
+    function() { face.makeSad(); },
+    function() { face.makeNeutral(); },
+    function() { face.makeHappy(); },
+    function() { face.speechBubble('lalala', 'description'); },
+    function() { face.speechBubbleImage('img/loader-nyan.gif'); },
+    function() { face.speechBubbleLoading(); },
+    function() { personalise.upInSmoke(); },
+    function() { cancelTesting(); }
+  ];
 
-  //     setTimeout(function() {
-  //       personalise.select('uber');
-
-  //       setTimeout(function() {
-  //         personalise.select('todoist');
-  //       }, 2500);
-
-  //     }, 2500);
-
-  //   }, 2500);
-
-  // }, 1000);
+  // step through test list and EXECUTE
+  var testingIntervalID = setInterval(function() {
+    var func = testList.shift();
+    console.log(func);
+    func.call();
+  }, 1500);
 
 });
