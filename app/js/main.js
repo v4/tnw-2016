@@ -89,6 +89,8 @@ $(document).ready(function () {
     face.speechBubbleLoading();
   }, 1000);
 
-  socket.emit('speech in', { payload: 'I feel sad' });
+  socket.emit('speech in', { payload: 'What is the time?' });
+  // socket.emit('speech in', { payload: 'I feel sad' });
+  // socket.emit('speech in', { payload: 'tell me a joke' });
 
 });

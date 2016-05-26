@@ -15,14 +15,12 @@ class JustMakingConversation extends Plugin {
     return ['getPositiveMood','getDateAndOrTime', 'getJoke'];
   }
 
-  getPositiveMood(context){
-    console.log('test', context);
+  getPositiveMood(sessionId, context, callback){
     // var moodsArray = ['sad', 'happy', 'high', 'stressed', 'relaxed', 'romantic'];
-    //TODO: get mood from context
-    var mood = 'sad';
+    var mood = this.datastore.mood[0].value;
+    // console.log('mood', mood);
     var positiveMood = '';
 
-    console.log('hallo', mood);
     switch(mood) {
       case 'sad':
         positiveMood = 'happy';
@@ -45,14 +43,14 @@ class JustMakingConversation extends Plugin {
       default:
         positiveMood = 'happy';
     }
-    console.log('exit', positiveMood);
-    return positiveMood;
+
+    context.positiveMood = positiveMood;
+    callback(context);
   }
 
-  getDateAndOrTime(context){
-    console.log(context);
-    //TODO: get date or time question from context
-    var isDateQuestion = true;
+  getDateAndOrTime(sessionId, context, callback){
+    var datetime_service = this.datastore.datetime_service[0].value;
+    // console.log('datetime_service', datetime_service);
 
     var objToday = new Date(),
       weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
@@ -67,21 +65,23 @@ class JustMakingConversation extends Plugin {
       curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
 
     var datetime = '';
-    if (isDateQuestion === true) {
+    if (datetime_service.toLowerCase().indexOf('time') === -1) {
       datetime = dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
     } else {
-      datetime = curHour + " hours " + curMinute + ' minutes ' + curMeridiem;
+      datetime = parseInt(curHour, 10) + " " + curMeridiem + ' and ' + parseInt(curMinute, 10) + ' minutes';
     }
 
-    console.log(datetime);
-    return datetime;
+    // console.log(datetime);
+    context.datetimetext = datetime;
+    callback(context);
   }
 
-  getJoke(context) {
+  getJoke(sessionId, context, callback) {
     joke.getJoke(function(joke){
       console.log(joke);
       //Example output: I wondered why the baseball was getting bigger. Then it hit me.
-      return joke;
+      context.jokeText = joke;
+      callback(context);
     });
   }
 
