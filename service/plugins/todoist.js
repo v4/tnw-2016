@@ -7,9 +7,12 @@ const todoist = require('node-todoist');
 
 class Todoist extends Plugin {
 
-  constructor() {
-    super();
+  constructor(sam) {
+    super(sam);
 
+    this.sam = sam;
+
+    
     todoist.login({email: 'jaap@vermaire.com', password: 'staat in keepass'})
       .then(function(user){
           // console.log('todoist user', user)
@@ -22,7 +25,11 @@ class Todoist extends Plugin {
     return ['addTask'];
   }
 
-  addTask(taskText){
+  addTask(sessionId, context, callback){
+
+    console.log('adding task', this.datastore);
+
+    callback();
     
   }
 }

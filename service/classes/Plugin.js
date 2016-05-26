@@ -4,7 +4,7 @@ const EventEmitter = require('events').EventEmitter;
 
 class Plugin extends EventEmitter {
 
-  constructor() {
+  constructor(sam) {
     super();
   }
 

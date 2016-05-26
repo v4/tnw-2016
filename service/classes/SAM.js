@@ -15,6 +15,8 @@ class SAM extends EventEmitter {
     
     var DIR = path_module.join(__dirname, '../plugins');
 
+    this.datastore = {};
+
     this.actions =
     {
       say: this.say.bind(this),
@@ -24,10 +26,9 @@ class SAM extends EventEmitter {
 
     this.plugins = [];
     this.LoadPlugins(DIR);
-
-    console.log('this.actions', this.actions)
+    
     this.on('speech in', this.process.bind(this));
-    this.wit = new Wit('E6AWMDVXHBRMM2TOIX3M53GNREPBFS7A', this.actions);
+    this.wit = new Wit('HUTYX574BW4ZAL74ZR3RKHABNPL5CJSZ', this.actions);
     this.sessionId = uuid.v1();
     this.context = {};
     this.steps = 5;
@@ -51,15 +52,13 @@ class SAM extends EventEmitter {
     } else {
       // we have a file: load it
       var plugin = require(path);
-      var pluginInstance = new plugin();
+      var pluginInstance = new plugin(this);
       this.plugins.push(pluginInstance);
       pluginInstance.getActions().forEach((action) => {
         this.actions[action] = pluginInstance[action].bind(this);
       })
     }
-
   }
-
   
   say(sessionId, context, message, cb) {
     console.log('sam say:' , message, context);
@@ -70,6 +69,7 @@ class SAM extends EventEmitter {
 
   merge(sessionId, context, entities, message, cb) {
     console.log(context, entities, message);
+    Object.assign(this.datastore, entities);
     cb(context);
   }
 
