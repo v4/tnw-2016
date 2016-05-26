@@ -26,6 +26,7 @@ function dataURItoBlob(dataURI)
 $(document).ready(function () {
 
   var recognition = new webkitSpeechRecognition();
+  recognition.lang = 'en-US';
   var socket = io('http://localhost:3000');
   var audio = null;
   var speechQueue = [];
