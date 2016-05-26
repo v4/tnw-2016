@@ -36,7 +36,7 @@ $(document).ready(function () {
   });
   
   function processSpeechout(data) {
-    if (idle) {
+    // if (idle) {
       idle = false;
       if (audio) audio = null;
       console.log('speech out', data.payload);
@@ -63,11 +63,11 @@ $(document).ready(function () {
         }
         idle = true;
       }); 
-    } else {
-      setTimeout(() => {
-        processSpeechout(data);
-      }, 100);
-    }
+    // } else {
+      // setTimeout(() => {
+      //   processSpeechout(data);
+      // }, 100);
+    // }
   }
 
   recognition.continuous = true;
@@ -197,6 +197,6 @@ $(document).ready(function () {
 
   /* ==================== TESTING ==================== */
 
-  testStuff();
+  // testStuff();
 
 });
