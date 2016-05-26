@@ -36,6 +36,7 @@ class Deezer extends Plugin {
   playFavoriteSong(sessionId, context, callback) {
     // TODO: play favorite song
     context.songtitle = 'Daft Punkt - Harder';
+    this.emit('play song', {});
     callback(context);
   }
 }

@@ -32,8 +32,8 @@ $(document).ready(function () {
   var speechQueue = [];
   var idle = true;
   socket.on('speech out', (data) => {
-    speechQueue.push(data);
-    processSpeechout(speechQueue.shift());
+    // speechQueue.push(data);
+    processSpeechout(data);
   });
   
   function processSpeechout(data) {
@@ -84,7 +84,15 @@ $(document).ready(function () {
       // }
       // recognition.stop();
     }
+    
+    // if (event.results[0][0].confidence > .8) {
+    //   console.log('speech in', event.results[0][0].transcript);
+    //   socket.emit('speech in', { payload: event.results[0][0].transcript });        
+    //   recognition.stop();           
+    // }
+
   };
+  recognition.start();
 
   var mockDeezer = function() {
     console.log('called !!!');
@@ -97,8 +105,8 @@ $(document).ready(function () {
     console.log('speech out', message);
   });
 
-  socket.on('on play song', (message) => {
-    console.log('on play song', message);
+  socket.on('play song', (message) => {
+    console.log('play song', message);
     mockDeezer();
   });
 
@@ -124,8 +132,6 @@ $(document).ready(function () {
     personalise.select('toon');
   });
   
-  recognition.start();
-
   // face.makeAngry();
   face.makeNeutral();
 
@@ -177,8 +183,6 @@ $(document).ready(function () {
     function() { cancelTesting(); }
   ];
 
-  // step through test list and EXECUTE
-  
   var testStuff = function() {
     var testingIntervalID = setInterval(function() {
       var func = testList.shift();
@@ -192,8 +196,6 @@ $(document).ready(function () {
     func.call();
   };
 
-  /* ==================== TESTING ==================== */
-  /* ==================== TESTING ==================== */
   /* ==================== TESTING ==================== */
 
   testStuff();
