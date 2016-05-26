@@ -101,6 +101,11 @@ $(document).ready(function () {
     personalise.upInSmoke();
   }
 
+  var startBot = function() {
+    personalise.upInSmoke();
+    face.makeNeutral();
+  }
+
   socket.on('speech out', (message) => {
 
     processSpeechout(message);
@@ -119,11 +124,15 @@ $(document).ready(function () {
   });
 
 
-  socket.on('reset bot', (message) => {
-    console.log('reset bot', message);
+  socket.on('stop bot', (message) => {
+    console.log('stop bot', message);
     stopBot();
   });
 
+  socket.on('start bot', (message) => {
+    console.log('start bot', message);
+    startBot();
+  });
 
   /* PERSONALISING SERVICES / APIS */
 

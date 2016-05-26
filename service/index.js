@@ -30,9 +30,13 @@ io.on('connection', (socket) => {
     socket.emit('play song', {});
   });
 
-  sam.on('reset bot', () => {
-    socket.emit('reset bot', {});
+  sam.on('stop bot', () => {
+    socket.emit('stop bot', {});
   });
+
+sam.on('start bot', () => {
+  socket.emit('start bot', {});
+});
 
   sam.on('speech out', (message) => {
     console.log('SAM: speech out: ', message);
