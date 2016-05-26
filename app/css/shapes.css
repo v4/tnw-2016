@@ -1,8 +1,8 @@
 
 .talkbubble {
    position: relative;
-   width: 270px;
-   height: 150px;
+   width: 350px;
+   height: 220px;
    background: rgba(0, 0, 0, 0.45);
    -moz-border-radius:    10px;
    -webkit-border-radius: 10px;

@@ -121,32 +121,19 @@ $(document).ready(function () {
 
   setTimeout(function() {
     personalise.select('deezer');
-
     setTimeout(function() {
-      // personalise.upInSmoke();
       personalise.depersonalise();
-    }, 2500)
-
-  }, 500)
-
-  // setTimeout(function() {
-  //   personalise.select('deezer');
-
-  //   setTimeout(function() {
-  //     personalise.select('toon');
-
-  //     setTimeout(function() {
-  //       personalise.select('uber');
-
-  //       setTimeout(function() {
-  //         personalise.select('todoist');
-  //       }, 2500);
-
-  //     }, 2500);
-
-  //   }, 2500);
-
-  // }, 1000);
+      setTimeout(function() {
+        personalise.select('toon');
+        setTimeout(function() {
+          personalise.select('todoist');
+          setTimeout(function() {
+            personalise.upInSmoke();
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }, 1000);
   
-  
+
 });
