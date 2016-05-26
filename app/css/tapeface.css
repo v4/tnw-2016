@@ -154,7 +154,7 @@
 }
 
 .face-holder-left {
-  margin-left: 5%;
+  margin-left: calc(50% - 440px);
   margin-top: 15%;
   transition: all 1.75s;
 }
