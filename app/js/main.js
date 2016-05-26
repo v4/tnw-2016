@@ -28,28 +28,47 @@ $(document).ready(function () {
   var recognition = new webkitSpeechRecognition();
   var socket = io('http://localhost:3000');
   var audio = null;
+  var speechQueue = [];
+  var idle = true;
   socket.on('speech out', (data) => {
-    if (audio) audio = null;
-    console.log('speech out', data.payload);
-    audio = new Audio();
-    audio.id = 'audioElement';
-    audio.src = URL.createObjectURL(dataURItoBlob('data:audio/ogg;base64,' + data.payload));
-    audio.load();
-    audio.play();
-    mouth.create(audio, '.face-oscilloscope', {
-      frequencyBins : 10,
-      barPadding: 2,
-      height: '30',
-      width: '75',
-      fillColor: '#3541db'
-    });
-    mouth.start();
-    mouth.setFillColor('#db4538');
-    audio.addEventListener("ended", function(){
-      recognition.start();
-    });
+    speechQueue.push(data);
+    processSpeechout(speechQueue.shift());
   });
-
+  
+  function processSpeechout(data) {
+    if (idle) {
+      idle = false;
+      if (audio) audio = null;
+      console.log('speech out', data.payload);
+      audio = new Audio();
+      audio.id = 'audioElement';
+      audio.src = URL.createObjectURL(dataURItoBlob('data:audio/ogg;base64,' + data.payload));
+      audio.load();
+      audio.play();
+      mouth.create(audio, '.face-oscilloscope', {
+        frequencyBins : 10,
+        barPadding: 2,
+        height: '30',
+        width: '75',
+        fillColor: '#3541db'
+      });
+      mouth.start();
+      mouth.setFillColor('#db4538');
+      audio.addEventListener("ended", function() {
+        console.log(recognition);
+        try {        
+          recognition.start();
+        } catch (e) {
+          
+        }
+        idle = true;
+      }); 
+    } else {
+      setTimeout(() => {
+        processSpeechout(data);
+      }, 100);
+    }
+  }
 
   recognition.continuous = true;
   recognition.interimResults = true;
@@ -57,9 +76,12 @@ $(document).ready(function () {
     face.makeHappy();
     console.log(event);
     if(event.results[0].isFinal) {
-      console.log('speech in', event.results[0][0].transcript);
-      socket.emit('speech in', { payload: event.results[0][0].transcript });
-      recognition.stop();
+      console.log(event.results[0][0].transcript);
+      if (event.results[0][0].transcript.toLowerCase().indexOf('sam') !== -1) {
+        console.log('speech in', event.results[0][0].transcript);
+        socket.emit('speech in', { payload: event.results[0][0].transcript });        
+      }
+      // recognition.stop();
     }
   };
 
