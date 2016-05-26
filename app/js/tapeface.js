@@ -126,7 +126,7 @@ var face = (function () { // eslint-disable-line
   module.speechBubbleImage = function(imageUrl) {
     module.showSpeechBubble()
     .then(function() {
-      $('.speechbubble .image').attr('src', imageUrl).addClass('popin');
+      $('.speechbubble .image').attr('src', imageUrl).addClass('popin').addClass('loader');
       setTimeout(function() {
 
         return;
@@ -143,6 +143,18 @@ var face = (function () { // eslint-disable-line
   module.speechBubbleLoading = function(imageUrl) {
     return face.speechBubbleImage('img/loader-bars-grey.gif');
   };
+
+  // go fullscreen
+  module.click = function() {
+    console.log('test');
+    // if (screenfull.enabled) {
+    //   screenfull.request();
+    // }
+  };
+
+  $('.face').click(module.click);
+  $('.face-head').click(module.click);
+  $('.face-holder').click(module.click);
 
   return module;
 }());

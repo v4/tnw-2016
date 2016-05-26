@@ -182,15 +182,15 @@
 }
 
 .face-shadow {
-  margin-left: 100px;
+  margin-left: 60px;
   background: rgba(0, 0, 0, 0.20);
   position: fixed;
   bottom: 5%;
-  width: 250px;
+  width: 350px;
   height: 20px;
-  -moz-border-radius: 100px / 60px;
-  -webkit-border-radius: 100px / 60px;
-  border-radius: 100px / 60px;
+  -moz-border-radius: 100px / 9px;
+  -webkit-border-radius: 100px / 9px;
+  border-radius: 100px / 9px;
 }
 
 /* FACE EYEBROWS */
@@ -218,7 +218,7 @@
 }
 
 .brow-right {
-  left: calc(200px + 30px);
+  left: calc(200px + 42px);
 }
 
 /* SAD */
@@ -404,6 +404,11 @@
   opacity: 1;
   transform: scale(1, 1);
   transition: all 0.5s ease-in-out;
+}
+
+.speechbubble > .talkbubble > .content img.loader {
+  position: relative;
+  top: 40px;
 }
 
 .popin {
