@@ -11,9 +11,17 @@ class YaYImages extends Plugin {
   }
 
   getActions(){
-    return [];
+    return ['getYayPictures'];
   }
 
+  getYayPictures(sessionId, context, callback){
+
+    var objectPicture = this.datastore.local_search_query[0].value;
+
+    // TODO: show me the picture!
+    
+    callback(context);
+  }
 }
 
 module.exports = YaYImages;
