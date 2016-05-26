@@ -86,4 +86,6 @@ $(document).ready(function () {
     face.speechBubbleImage('loadingIcon.png');
   }, 1000);
 
+  socket.emit('speech in', { payload: 'I feel sad' });
+
 });
