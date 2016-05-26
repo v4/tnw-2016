@@ -168,32 +168,43 @@
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background: #ff4e40;
-  color: #e01e10;
+  background: #e3402f;
+  color: #e3402f;
+}
+
+.todoist-logo {
+  position: absolute;
+  display: block;
+  background: url('../img/todoist.jpg') center no-repeat;
+  width: 800px;
+  height: 800px;
+  transform: scale(0.1, 0.1);
+  top: -350px;
+  left: -360px;
 }
 
 /* TODOIST BROW CHANGES */
 
 .brows-todoist .brow-left {
-  background: #ff4e40;
+  background: #e3402f;
   transition: all 1s;
 }
 
 .brows-todoist .brow-right {
-  background: #ff4e40;
+  background: #e3402f;
   transition: all 1s;
 }
 
 /* TODOIST SPEECHBUBBLE */
 
 .speechbubble-todoist .talkbubble {
-  background: #ff4e40;
+  background: #e3402f;
   opacity: 0.45;
 }
 
 .speechbubble-todoist .talkbubble:before {
   border-top: 13px solid transparent;
-  border-right: 26px solid #ff4e40;
+  border-right: 26px solid #e3402f;
   border-bottom: 13px solid transparent;
 }
 
