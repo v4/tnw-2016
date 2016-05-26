@@ -7,6 +7,11 @@ var personalise = (function () {
   module.removeAllPersonalisations = function () {
     apis.forEach(function(api) {
       $('.' + api).addClass('invisible');
+      // remove personalisation from brows, eyes, etc.
+      $('.face-brows').removeClass(api);
+      $('.face-eyes').removeClass(api);
+      $('.bg-color').removeClass(api);
+      $('.speechbubble').removeClass(api);
     });
   };
 
@@ -18,10 +23,12 @@ var personalise = (function () {
         $('.' + api).removeClass('invisible');
       }
     });
+
     // apply personalisation also to brows, eyes, etc.
     $('.face-brows').addClass(personalisation);
     $('.face-eyes').addClass(personalisation);
     $('.bg-color').addClass(personalisation);
+    $('.speechbubble').addClass(personalisation);
   };
 
   return module;

@@ -49,6 +49,8 @@
   border-bottom-right-radius: 5px;
 }
 
+/* DEEZER BROW FIX */
+
 .deezer .brow-left {
   background: #ffe00a;
   transition: all 1s;
@@ -57,6 +59,19 @@
 .deezer .brow-right {
   background: #bfed7e;
   transition: all 1s;
+}
+
+/* DEEZER SPEECHBUBBLE */
+
+.deezer .talkbubble {
+  background: #ff63b8;
+  opacity: 0.45;
+}
+
+.deezer .talkbubble:before {
+  border-top: 13px solid transparent;
+  border-right: 26px solid #ff63b8;
+  border-bottom: 13px solid transparent;
 }
 
 .uber {
@@ -84,6 +99,31 @@
   border-radius: 5px;
   background: #ff4e40;
   color: #e01e10;
+}
+
+/* TODOIST BROW FIX */
+
+.todoist .brow-left {
+  background: #ff4e40;
+  transition: all 1s;
+}
+
+.todoist .brow-right {
+  background: #ff4e40;
+  transition: all 1s;
+}
+
+/* TODOIST SPEECHBUBBLE */
+
+.todoist .talkbubble {
+  background: #ff4e40;
+  opacity: 0.45;
+}
+
+.todoist .talkbubble:before {
+  border-top: 13px solid transparent;
+  border-right: 26px solid #ff4e40;
+  border-bottom: 13px solid transparent;
 }
 
 .toon {
