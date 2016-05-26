@@ -25,7 +25,7 @@ var face = (function () { // eslint-disable-line
   };
 
   module.setMood = function (mood) {
-    this.removeAllMoodClasses();
+    module.removeAllMoodClasses();
     // add mood classes to all face components
     $('.face-eyes').addClass('face-' + mood);
     $('.face-brows').addClass('face-' + mood);
@@ -33,8 +33,10 @@ var face = (function () { // eslint-disable-line
     // remove all AGAIN after a set amount of time, 7 seconds?
     clearTimeout(module.moodTimeoutID);
     module.moodTimeoutID = setTimeout(function() {
-      this.removeAllMoodClasses();
-    }, 6000);
+      console.log('defaulting to neutral face!');
+      module.removeAllMoodClasses();
+      module.makeNeutral();
+    }, 5000);
     return true;
   };
 

@@ -165,7 +165,6 @@ $(document).ready(function () {
     // function() { personalise.select('todoist'); },
     function() { face.makeAngry(); },
     function() { face.makeSad(); },
-    function() { face.makeNeutral(); },
     function() { face.makeHappy(); },
     // function() { face.speechBubble('lalala', 'description'); },
     // function() { face.speechBubbleImage('img/loader-nyan.gif'); },
@@ -177,13 +176,13 @@ $(document).ready(function () {
   var testStuff = function() {
     var testingIntervalID = setInterval(function() {
       var func = testList.shift();
-      console.log(func);
+      console.log('calling function: ', func);
       func.call();
     }, 10000);
 
     // BUT execute the first function straight away
     var func = testList.shift();
-    console.log(func);
+    console.log('calling function: ', func);
     func.call();
   };
 
