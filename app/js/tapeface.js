@@ -31,11 +31,13 @@ var face = (function () { // eslint-disable-line
     $('.face-brows').addClass('face-' + mood);
     $('.bg-color').addClass('face-' + mood);
     // remove all AGAIN after a set amount of time, 7 seconds?
-    clearTimeout(module.moodTimeoutID);
+    if (module.moodTimeoutID !== null) clearTimeout(module.moodTimeoutID);
     module.moodTimeoutID = setTimeout(function() {
       console.log('defaulting to neutral face!');
       module.removeAllMoodClasses();
-      module.makeNeutral();
+      $('.face-eyes').addClass('face-neutral');
+      $('.face-brows').addClass('face-neutral');
+      $('.bg-color').addClass('face-neutral');
     }, 5000);
     return true;
   };
@@ -62,11 +64,6 @@ var face = (function () { // eslint-disable-line
     // console.log('tapeface is neutral.');
     module.setMood('neutral');
     return true;
-  };
-
-  module.setVocalExpression = function (expression) {
-    expression = expression || 'silent';
-    // console.log('tapeface vocal expression set to: ', expression);
   };
 
   module.updateSpeechBubblePos = function() {

@@ -95,7 +95,6 @@ $(document).ready(function () {
   recognition.start();
 
   var mockDeezer = function() {
-    console.log('called !!!');
     var deezerTrackID = '3135556';
     var deezerIframe = '<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=true&playlist=false&width=220&height=220&color=478cc7&layout=dark&size=medium&type=tracks&id=' + deezerTrackID + '&app_id=1" width="220" height="220"></iframe>'
     face.speechBubbleDeeze(deezerIframe);
@@ -188,6 +187,6 @@ $(document).ready(function () {
 
   /* ==================== TESTING ==================== */
 
-  // testStuff();
+  testStuff();
 
 });
