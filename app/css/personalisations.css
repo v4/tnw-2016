@@ -12,6 +12,10 @@
   transition: all 1s;
 }
 
+/* ================= DEEZER ================== */
+/* ================= DEEZER ================== */
+/* ================= DEEZER ================== */
+
 .deezer {
   
 }
@@ -74,6 +78,10 @@
   border-bottom: 13px solid transparent;
 }
 
+/* ================= UBER ================== */
+/* ================= UBER ================== */
+/* ================= UBER ================== */
+
 .uber {
   
 }
@@ -88,6 +96,10 @@
 .uber-text {
   color: #FFFFFF;
 }
+
+/* ================= TODOIST ================== */
+/* ================= TODOIST ================== */
+/* ================= TODOIST ================== */
 
 .todoist {
   
@@ -126,6 +138,10 @@
   border-bottom: 13px solid transparent;
 }
 
+/* ================= TOON ================== */
+/* ================= TOON ================== */
+/* ================= TOON ================== */
+
 .toon {
   
 }
@@ -137,4 +153,23 @@
   background: #ff924c;
   color: #d96e22;
   position: absolute;
+}
+
+/* TOON BROW FIX */
+
+.brows-toon .brow-left {
+  background: #ff924c;
+  transition: all 1s;
+}
+
+.brows-toon .brow-right {
+  background: #ff924c;
+  transition: all 1s;
+}
+
+/* TOON SPEECHBUBBLE */
+
+.speechbubble-toon .talkbubble {
+  background: #ff924c;
+  opacity: 0.45;
 }
