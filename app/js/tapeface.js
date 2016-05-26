@@ -72,6 +72,7 @@ var face = (function () { // eslint-disable-line
   module.showSpeechBubble = function() {
     return Q.Promise(function(resolve, reject, notify) {
       // move over tapeface to the left of the screen
+      $('.face-holder').removeClass('face-holder-centered');
       $('.face-holder').addClass('face-holder-left');
       module.hasOpenSpeechBubble = true;
       requestAnimationFrame(module.updateSpeechBubblePos);
@@ -80,29 +81,67 @@ var face = (function () { // eslint-disable-line
         $('.speechbubble').removeClass('invisible');
         $('.speechbubble').addClass('popin');
         setTimeout(function() {
-          // $('.face-holder').addClass('face-holder-left');
           resolve('resolved!');
-        }, 750)
+        }, 500)
       }, 2000);
-
-      // reject(new Error("Speech Bubble Error! "));
-
-      // notify();
     });
   }
+
+  module.hideSpeechBubble = function() {
+    return Q.Promise(function(resolve, reject, notify) {
+      
+      $('.speechbubble').removeClass('popin');
+      $('.speechbubble').addClass('invisible');
+
+      setTimeout(function() {
+        // move over tapeface to the center of the screen
+        $('.face-holder').removeClass('face-holder-left');
+        $('.face-holder').addClass('face-holder-centered');
+        module.hasOpenSpeechBubble = false;
+
+        setTimeout(function() {
+          resolve('resolved!');
+        }, 3000);
+
+      }, 1750);
+
+    });
+  };
 
   module.speechBubble = function(title, description) {
     module.showSpeechBubble()
     .then(function() {
-      console.log('show Speech Bubble should be resolved!');
+      $('.speechbubble .title').html(title).addClass('popin');
+      $('.speechbubble .description').html(description).addClass('popin');
+      return;
+    })
+    .then(function() {
+      setTimeout(function() {
+        module.hideSpeechBubble();
+      }, 2500);
+      return;
     });
   };
 
   module.speechBubbleImage = function(imageUrl) {
     module.showSpeechBubble()
     .then(function() {
-      console.log('show Speech Bubble should be resolved!');
+      $('.speechbubble .image').attr('src', imageUrl).addClass('popin');
+      setTimeout(function() {
+
+        return;
+      }, 1000);
+    })
+    .then(function() {
+      // setTimeout(function() {
+      //   module.hideSpeechBubble();
+      // }, 2500);
+      return;
     });
+  };
+
+  module.speechBubbleLoading = function(imageUrl) {
+    return face.speechBubbleImage('img/loader-bars-grey.gif');
   };
 
   return module;
