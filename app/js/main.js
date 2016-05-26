@@ -163,22 +163,13 @@ $(document).ready(function () {
     // function() { personalise.depersonalise(); },
     // function() { personalise.select('toon'); },
     // function() { personalise.select('todoist'); },
-    // function() { face.makeAngry(); },
-    // function() { face.makeSad(); },
-    // function() { face.makeNeutral(); },
-    // function() { face.makeHappy(); },
+    function() { face.makeAngry(); },
+    function() { face.makeSad(); },
+    function() { face.makeNeutral(); },
+    function() { face.makeHappy(); },
     // function() { face.speechBubble('lalala', 'description'); },
     // function() { face.speechBubbleImage('img/loader-nyan.gif'); },
     // function() { face.speechBubbleLoading(); },
-    function() { 
-      setTimeout(function() {
-        personalise.select('uber');
-      }, 2000);
-      setTimeout(function() {
-        face.makeHappy();
-      }, 4500); 
-      // mockDeezer(); 
-    },
     // function() { personalise.upInSmoke(); },
     function() { cancelTesting(); }
   ];
@@ -188,7 +179,7 @@ $(document).ready(function () {
       var func = testList.shift();
       console.log(func);
       func.call();
-    }, 20000);
+    }, 10000);
 
     // BUT execute the first function straight away
     var func = testList.shift();
