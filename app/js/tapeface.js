@@ -11,6 +11,8 @@ var face = (function () { // eslint-disable-line
   var moods = ['happy','sad','angry','neutral'];
 
   module.hasOpenSpeechBubble = false;
+  module.moodTimeoutID = null;
+  module.speechBubbleTimeoutID = null;
 
   module.removeAllMoodClasses = function () {
     moods.forEach(function(mood) {
@@ -24,10 +26,15 @@ var face = (function () { // eslint-disable-line
 
   module.setMood = function (mood) {
     this.removeAllMoodClasses();
+    // add mood classes to all face components
     $('.face-eyes').addClass('face-' + mood);
     $('.face-brows').addClass('face-' + mood);
     $('.bg-color').addClass('face-' + mood);
-    // TODO: $('.face-mouth').addClass('.face-' . mood);
+    // remove all AGAIN after a set amount of time, 7 seconds?
+    clearTimeout(module.moodTimeoutID);
+    module.moodTimeoutID = setTimeout(function() {
+      this.removeAllMoodClasses();
+    }, 6000);
     return true;
   };
 
@@ -77,7 +84,9 @@ var face = (function () { // eslint-disable-line
       module.hasOpenSpeechBubble = true;
       requestAnimationFrame(module.updateSpeechBubblePos);
       
-      setTimeout(function() {
+      clearTimeout(module.speechBubbleTimeoutID);
+
+      module.speechBubbleTimeoutID = setTimeout(function() {
         $('.speechbubble').removeClass('invisible');
         $('.speechbubble').addClass('popin');
         setTimeout(function() {
@@ -116,7 +125,7 @@ var face = (function () { // eslint-disable-line
       return;
     })
     .then(function() {
-      setTimeout(function() {
+      module.speechBubbleTimeoutID = setTimeout(function() {
         module.hideSpeechBubble();
       }, 2500);
       return;
@@ -128,15 +137,8 @@ var face = (function () { // eslint-disable-line
     .then(function() {
       $('.speechbubble .image').attr('src', imageUrl).addClass('popin').addClass('loader');
       setTimeout(function() {
-
         return;
       }, 1000);
-    })
-    .then(function() {
-      // setTimeout(function() {
-      //   module.hideSpeechBubble();
-      // }, 2500);
-      return;
     });
   };
 
