@@ -13,8 +13,8 @@ const watson = require('watson-developer-cloud');
 // For local development, replace username and password
 var textToSpeech = watson.text_to_speech({
   version: 'v1',
-  password: "kCGqg4aLZtOH",
-  username: "1df91b4b-185a-41e7-bcf4-33a43fd4a55e"
+  password: "",
+  username: ""
 });
 
 app.use(express.static('../app'));
